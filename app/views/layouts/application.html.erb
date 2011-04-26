@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= javascript_include_tag :defaults %>
+	<%= javascript_include_tag 'jquery.dataTables' %>
+    <%= stylesheet_link_tag "application" %>
+	<%= stylesheet_link_tag 'demo_page' %>
+	<!-- <%= stylesheet_link_tag 'demo_table' %> -->
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+	<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		$('#example').dataTable( {
+				"sPaginationType": "full_numbers"
+			} );
+	} );
+	</script>
+  </head>
+  <body>
+    <div id="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      <%= content_tag :h1, yield(:title) if show_title? %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

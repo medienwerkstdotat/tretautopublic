@@ -1,0 +1,252 @@
+<% server_names.each do |server_name| %>
+	<% next if server_name[:alias].nil? %>
+	server
+	{
+		listen <%= ip %>:<%= exists?(:http_port) ? http_port : 80 %>;
+		server_name<%= server_name[:alias].map { |a| " #{a}" }.join(" ") %>;
+		rewrite ^(.*)$ http://<%= server_name[:name] %>$1 permanent;
+	}
+<% end %>
+
+server
+{
+
+	<% if exists?(:ip) %>
+		listen <%= ip %>:<%= exists?(:http_port) ? http_port : 80 %>;
+	<% else %>
+		listen <%= exists?(:http_port) ? http_port : 80 %>;
+	<% end %>
+	server_name<%= server_names.map { |s| " #{s[:name]}" }.join(" ") %>;
+	root <%= current_path %>/public;
+
+  # Passenger settings
+	passenger_enabled on;
+	rails_env <%= rails_env %>;
+  passenger_min_instances 1;
+
+	access_log <%= shared_path %>/log/http.access.log;
+	error_log  <%= shared_path %>/log/http.error.log;
+	
+	<% if exists?(:fileupload) && fileupload %>
+    location /upload {
+
+      #pass request body to here
+      upload_pass @upload_endpoint;
+
+      # Store files to this directory
+      upload_store <%= shared_path %>/tmp 1;
+
+      # set permissions on the uploaded files
+      upload_store_access user:rw group:rw all:r;
+
+      # Set specified fields in request body
+      upload_set_form_field upload[filename] "$upload_file_name";
+      upload_set_form_field upload[content_type] "$upload_content_type";
+      upload_set_form_field upload[path] "$upload_tmp_path";
+
+      # pass the rest
+      upload_pass_form_field ".";
+      upload_cleanup 400 404 499 500-505;
+    }
+
+    location @upload_endpoint {
+      passenger_enabled on;  # or this could be your mongrel/thin backend
+    }
+	<% end %>
+	
+	<%= extra if exists?(:extra) %>
+	
+	### Disable certain user agents
+
+	if ($http_user_agent ~ "webintegration|Microsoft Data Access Internet Publishing Provider Protocol Discovery") {
+    return 403;
+  }
+
+	### expiration for assets
+
+	location ~* \.(ico|css|gif|jpe?g|png|swf|js)(\?[0-9]+)?$ {
+	  if (-f $request_filename) {
+		  expires max;
+		  break;
+		}
+	}
+	
+	### flv seeking
+
+	location ~ \.flv$
+	{
+		root <%= current_path %>/public;
+		flv;
+	}
+	
+	### http authentication
+	<% if exists?(:http_username) && exists?(:http_password) %>
+  	location  /  {
+  	  passenger_enabled on;
+      auth_basic            "Restricted";
+      auth_basic_user_file  /opt/httpauth/<%= application %>;
+    }
+  <% end %>
+
+	### maintenance stuff
+	if (-f $document_root/system/maintenance.html) {
+		set $maintenance 1;
+	}
+
+	if ($request_uri ~* \.(ico|css|gif|jpe?g|png|swf|js)(\?[0-9]+)?$) {
+		set $maintenance 0;
+	}
+
+  error_page 503 @maintenance;
+  location @maintenance {
+    rewrite ^(.*)$ /theme/maintenance/index.html break;
+  }
+
+  #if ($remote_addr = 94.199.170.173) {
+  #  set $maintenance 0;
+  #}
+
+  if ($maintenance) {
+    return 503;
+  }
+
+	
+	### page caching
+	<% if exists?(:page_cache) %>
+    set $cache_page 1;
+    # only GET is cachable
+    if ($request_method != GET)
+    {
+        set $cache_page 0;
+    }
+    # and only requests without GET parameters
+    if ($request_uri ~ \?)
+    {
+        set $cache_page 0;
+    }
+    # and only send files that are on the filesystem
+    if (!-f $document_root/cache/$uri.html)
+    {
+        set $cache_page 0;
+    }
+    if ($cache_page = 1)
+    {
+            rewrite (.*) /cache/$1.html break;
+    }
+	<% end %>
+	
+	### X-Accel-Redirect
+	
+  location /internal/ {
+    internal;
+    root <%= shared_path %>/;
+  }
+}
+
+passenger_pre_start http://<%= server_names.first[:name] %>:<%= exists?(:http_port) ? http_port : 80 %>/;
+
+<% if ssl %>
+
+	server
+	{
+	<% if exists?(:ip) %>
+		listen <%= ip %>:<%= exists?(:https_port) ? https_port : 443 %>;
+	<% else %>
+		listen <%= exists?(:https_port) ? https_port : 443 %>;
+	<% end %>
+			server_name<%= server_names.map { |s| " #{s[:name]}" }.join(" ") %>;
+	    root <%= current_path %>/public;
+	    passenger_enabled on;
+			rails_env <%= rails_env %>;
+      passenger_min_instances 1;
+
+	    ssl on;
+	    ssl_certificate /opt/nginx/ssl/<%= ssl_cert %>;
+	    ssl_certificate_key /opt/nginx/ssl/<%= ssl_key %>;
+
+	    access_log <%= shared_path %>/log/https.access.log;
+	    error_log  <%= shared_path %>/log/https.error.log;
+
+    	<% if exists?(:fileupload) && fileupload %>
+        location /upload {
+
+          #pass request body to here
+          upload_pass @upload_endpoint;
+
+          # Store files to this directory
+          upload_store <%= shared_path %>/tmp 1;
+
+          # set permissions on the uploaded files
+          upload_store_access user:rw group:rw all:r;
+
+          # Set specified fields in request body
+          upload_set_form_field upload[filename] "$upload_file_name";
+          upload_set_form_field upload[content_type] "$upload_content_type";
+          upload_set_form_field upload[path] "$upload_tmp_path";
+
+          # pass the rest
+          upload_pass_form_field ".";
+          upload_cleanup 400 404 499 500-505;
+        }
+
+        location @upload_endpoint {
+          passenger_enabled on;  # or this could be your mongrel/thin backend
+        }
+    	<% end %>
+
+    	### Disable certain user agents
+
+    	if ($http_user_agent ~ "webintegration|Microsoft Data Access Internet Publishing Provider Protocol Discovery|Microsoft Office Protocol Discovery|Microsoft-WebDAV-MiniRedir") 
+    	{
+        return 403;
+      }
+
+    	location ~* \.(ico|css|gif|jpe?g|png|swf|js)(\?[0-9]+)?$ {
+    	  if (-f $request_filename) {
+    		  expires max;
+    		  break;
+    		}
+    	}
+	
+			location ~ \.flv$
+			{
+				root <%= current_path %>/public;
+				flv;
+			}
+			
+    	### http authentication
+    	<% if exists?(:http_username) && exists?(:http_password) %>
+      	location  /  {
+      	  passenger_enabled on;
+          auth_basic            "Restricted";
+          auth_basic_user_file  /opt/httpauth/<%= application %>;
+        }
+      <% end %>
+
+			### maintenance stuff
+    	if (-f $document_root/system/maintenance.html) {
+    		set $maintenance 1;
+    	}
+
+    	if ($request_uri ~* \.(ico|css|gif|jpe?g|png|swf|js)(\?[0-9]+)?$) {
+    		set $maintenance 0;
+    	}
+
+      error_page 503 @maintenance;
+      location @maintenance {
+        rewrite ^(.*)$ /theme/maintenance/index.html break;
+      }
+
+      #if ($remote_addr = 94.199.170.173) {
+      #  set $maintenance 0;
+      #}
+
+      if ($maintenance) {
+        return 503;
+      }
+    	
+	}
+
+  passenger_pre_start https://<%= server_names.first[:name] %>:<%= exists?(:https_port) ? https_port : 443 %>/;
+
+<% end %>

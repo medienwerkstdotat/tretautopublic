@@ -1,0 +1,25 @@
+# logrotate.erb.conf
+# Logrotate config for <%= application %>
+# Generated at <%= Time.now.strftime("%d.%m.%Y, %H:%M") %>
+<%= shared_path %>/log/*.log {
+  daily
+  missingok
+  rotate 365
+  size 10000k
+  compress
+  delaycompress
+  sharedscripts
+  olddir <%= shared_path %>/logrotate
+  postrotate
+    # nginx
+    test ! -f /opt/nginx/logs/nginx.pid || kill -USR1 `cat /opt/nginx/logs/nginx.pid`
+    # apache
+    if [ -f "`. /etc/apache2/envvars ; echo ${APACHE_PID_FILE:-/var/run/apache2.pid}`" ]; then
+            /etc/init.d/apache2 reload > /dev/null
+    fi
+    # rails
+    touch <%= current_path %>/tmp/restart.txt
+    # sphinx
+    test ! -f <%= shared_path %>/pids/searchd.production.pid || kill -USR1 `cat <%= shared_path %>/pids/searchd.production.pid`
+  endscript
+}

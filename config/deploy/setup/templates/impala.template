@@ -1,0 +1,6 @@
+<%= rails_env %>:
+  site_domain: "<%= server_names.first[:name] %>"
+  ssl: <%= exists?(:page_cache) ? "true" : "false" %>
+  page_cache: <%= exists?(:page_cache) ? "true" : "false" %>
+  <% impala_settings.each do |k,v| %><%= k %>: "<%= v %>"
+  <% end %>

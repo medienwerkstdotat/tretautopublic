@@ -1,0 +1,170 @@
+<%= form_for @auto, :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :hersteller %><br />
+    <%= f.text_field :hersteller %>
+  </p>
+  <p>
+    <%= f.label :modell %><br />
+    <%= f.text_field :modell %>
+  </p>
+	
+	<%= f.fields_for :assets do |asset_fields| %>
+		<% if asset_fields.object.new_record? %>
+			<p>
+				<%= asset_fields.file_field :asset %>
+			</p>
+		<% end %>
+	<% end %>
+	
+	<% f.fields_for :assets do |asset_fields| %>
+		<% unless asset_fields.object.new_record? %>
+			<p>
+				<%= link_to image_tag(asset_fields.object.asset.url(:thumb)), asset_fields.object.asset.url(:original) %>
+				<%= asset_fields.check_box :_destroy %> delete
+			</p>
+		<% end %>
+	<% end %>
+	
+  <p>
+    <%= f.label :land %><br />
+    <%= f.text_field :land %>
+  </p>
+  <p>
+    <%= f.label :baujahr %><br />
+    <%= f.text_field :baujahr %>
+  </p>
+  <p>
+    <%= f.label :typ %><br />
+    <%= f.text_field :typ %>
+  </p>
+  <p>
+    <%= f.label :datenbanknr %><br />
+    <%= f.text_field :datenbanknr %>
+  </p>
+  <p>
+    <%= f.label :datenbanknralt %><br />
+    <%= f.text_field :datenbanknralt %>
+  </p>
+  <p>
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </p>
+  <p>
+    <%= f.label :farbe %><br />
+    <%= f.text_field :farbe %>
+  </p>
+  <p>
+    <%= f.label :antrieb %><br />
+    <%= f.text_field :antrieb %>
+  </p>
+  <p>
+    <%= f.label :konstruktion %><br />
+    <%= f.text_field :konstruktion %>
+  </p>
+  <p>
+    <%= f.label :raeder %><br />
+    <%= f.text_field :raeder %>
+  </p>
+  <p>
+    <%= f.label :ausstattung %><br />
+    <%= f.text_field :ausstattung %>
+  </p>
+  <p>
+    <%= f.label :abmessungl %><br />
+    <%= f.text_field :abmessungl %>
+  </p>
+  <p>
+    <%= f.label :abmessungb %><br />
+    <%= f.text_field :abmessungb %>
+  </p>
+  <p>
+    <%= f.label :abmessungh %><br />
+    <%= f.text_field :abmessungh %>
+  </p>
+  <p>
+    <%= f.label :gewichtinkg %><br />
+    <%= f.text_field :gewichtinkg %>
+  </p>
+  <p>
+    <%= f.label :relevanz %><br />
+    <%= f.text_field :relevanz %>
+  </p>
+  <p>
+    <%= f.label :geschaetztermarktwert %><br />
+    <%= f.text_field :geschaetztermarktwert %>
+  </p>
+  <p>
+    <%= f.label :sonstiges %><br />
+    <%= f.text_field :sonstiges %>
+  </p>
+  <p>
+    <%= f.label :anmerkungen %><br />
+    <%= f.text_area :anmerkungen %>
+  </p>
+  <p>
+    <%= f.label :kaufdatum %><br />
+    <%= f.date_select :kaufdatum %>
+  </p>
+  <p>
+    <%= f.label :ebaybenutzername %><br />
+    <%= f.text_field :ebaybenutzername %>
+  </p>
+  <p>
+    <%= f.label :verkaeufer %><br />
+    <%= f.text_field :verkaeufer %>
+  </p>
+  <p>
+    <%= f.label :ebayartikelnummer %><br />
+    <%= f.text_field :ebayartikelnummer %>
+  </p>
+  <p>
+    <%= f.label :modellbeschreibung %><br />
+    <%= f.text_field :modellbeschreibung %>
+  </p>
+  <p>
+    <%= f.label :farbekauf %><br />
+    <%= f.text_field :farbekauf %>
+  </p>
+  <p>
+    <%= f.label :anmerkungnachkauf %><br />
+    <%= f.text_field :anmerkungnachkauf %>
+  </p>
+  <p>
+    <%= f.label :zahlungsart %><br />
+    <%= f.text_field :zahlungsart %>
+  </p>
+  <p>
+    <%= f.label :zahlungsdatum %><br />
+    <%= f.date_select :zahlungsdatum %>
+  </p>
+  <p>
+    <%= f.label :waehrung %><br />
+    <%= f.text_field :waehrung %>
+  </p>
+  <p>
+    <%= f.label :kaufpreis %><br />
+    <%= f.text_field :kaufpreis %>
+  </p>
+  <p>
+    <%= f.label :transport %><br />
+    <%= f.text_field :transport %>
+  </p>
+  <p>
+    <%= f.label :summe %><br />
+    <%= f.text_field :summe %>
+  </p>
+  <p>
+    <%= f.label :ersatzteile %><br />
+    <%= f.text_field :ersatzteile %>
+  </p>
+  <p>
+    <%= f.label :restaurier %><br />
+    <%= f.text_field :restaurier %>
+  </p>
+  <p>
+    <%= f.label :gesamt %><br />
+    <%= f.text_field :gesamt %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

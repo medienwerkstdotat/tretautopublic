@@ -1,0 +1,8 @@
+<%= rails_env %>:
+  adapter: <%= exists?(:adapter) ? adapter : "mysql" %>
+  encoding: utf8
+  host: <%= exists?(:db_host) ? db_host : "localhost" %>
+  username: <%= exists?(:db_username) ? db_username : "root" %>
+  password: <%= db_password %>
+  database: <%= db_prefix %>_<%= rails_env %>
+  <% if exists?(:socket) && socket != "none" || !exists?(:socket) %>socket: "<%= exists?(:socket) ? socket : "/tmp/mysqld.sock" %>"<% end %>

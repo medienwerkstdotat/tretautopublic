@@ -1,0 +1,112 @@
+<img src="/images/tretauto-logo.jpg" style="float:left; margin-left: -20px;" width="582" height="46" alt="Tretauto Logo">
+<table id="example">
+	<thead>
+  		<tr>
+			<th width=120 >Vorschaubild</th>
+			<th width=30 >ID</th>
+		    <th>Hersteller</th>
+		    <th>Modell</th>
+		    <!--<th>Land</th>
+		    <th>Baujahr</th>
+		    <th>Typ</th>
+		    <th>Datenbanknr</th>
+		    <th>Datenbanknralt</th>
+		    -->
+		    <th>Farbe</th>
+			<th>Status</th>
+		    <!-- <th>Antrieb</th>
+		    <th>Konstruktion</th>
+		    <th>Raeder</th>
+		    <th>Ausstattung</th>
+		    <th>Abmessungl</th>
+		    <th>Abmessungb</th>
+		    <th>Abmessungh</th>
+		    <th>Gewichtinkg</th>
+		    <th>Relevanz</th>
+		    <th>Geschaetztermarktwert</th>
+		    <th>Sonstiges</th>
+		    <th>Anmerkungen</th>
+		    <th>Kaufdatum</th>
+		    <th>Ebaybenutzername</th>
+		    <th>Verkaeufer</th>
+		    <th>Ebayartikelnummer</th>
+		    <th>Modellbeschreibung</th>
+		    <th>Farbekauf</th>
+		    <th>Anmerkungnachkauf</th>
+		    <th>Zahlungsart</th>
+		    <th>Zahlungsdatum</th>
+		    <th>Waehrung</th>
+		    <th>Kaufpreis</th>
+		    <th>Transport</th>
+		    <th>Summe</th>
+		    <th>Ersatzteile</th> -->
+		    <th>Restaurier</th>
+		    <!-- <th>Gesamt</th> -->
+			<th></th>
+			<th></th>
+			<th></th>
+		  </tr>
+		</thead>
+	<tbody>
+  <% for auto in @autos %>
+    <tr>
+		<td>
+		
+		<% auto.assets.each_with_index do |asset, i| 
+			break if i == 1;
+		%>
+		
+			<%= image_tag(asset.asset.url(:thumb)) %>
+			
+		<% end %>
+		
+	</td>
+	  <td><%= auto.id %></td>
+      <td><%= auto.hersteller %></td>
+      <td><%= auto.modell %></td>
+      <!-- <td><%= auto.land %></td>
+      		<td><%= auto.baujahr %></td>
+            <td><%= auto.typ %></td>
+            <td><%= auto.datenbanknr %></td>
+            <td><%= auto.datenbanknralt %></td>
+            -->
+            <td><%= auto.farbe %></td>
+			<td><%= auto.status %></td>
+            <!-- <td><%= auto.antrieb %></td>
+            <td><%= auto.konstruktion %></td>
+            <td><%= auto.raeder %></td>
+            <td><%= auto.ausstattung %></td>
+            <td><%= auto.abmessungl %></td>
+            <td><%= auto.abmessungb %></td>
+            <td><%= auto.abmessungh %></td>
+            <td><%= auto.gewichtinkg %></td>
+            <td><%= auto.relevanz %></td>
+            <td><%= auto.geschaetztermarktwert %></td>
+            <td><%= auto.sonstiges %></td>
+            <td><%= auto.anmerkungen %></td>
+            <td><%= auto.kaufdatum %></td>
+            <td><%= auto.ebaybenutzername %></td>
+            <td><%= auto.verkaeufer %></td>
+            <td><%= auto.ebayartikelnummer %></td>
+            <td><%= auto.modellbeschreibung %></td>
+            <td><%= auto.farbekauf %></td>
+            <td><%= auto.anmerkungnachkauf %></td>
+            <td><%= auto.zahlungsart %></td>
+            <td><%= auto.zahlungsdatum %></td>
+            <td><%= auto.waehrung %></td>
+            <td><%= auto.kaufpreis %></td>
+            <td><%= auto.transport %></td>
+            <td><%= auto.summe %></td>
+            <td><%= auto.ersatzteile %></td> -->
+            <td><%= auto.restaurier %></td>
+            <!-- <td><%= auto.gesamt %></td> -->
+      <td><%= link_to image_tag("/images/view.png", :border=>0), auto %></td>
+      <td><%= link_to image_tag("/images/edit.png", :border=>0), edit_auto_path(auto) %></td>
+	  <td><%= link_to image_tag("/images/delete.png", :border=>0), auto, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+
+  <% end %>
+</tbody>
+</table>
+
+<p><%= link_to "New Auto", new_auto_path %></p>

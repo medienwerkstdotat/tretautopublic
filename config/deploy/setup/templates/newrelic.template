@@ -1,0 +1,17 @@
+<%= rails_env %>:
+  license_key: 'a538aab8460396de231b0341c63b84bbee5b4165'
+  app_name: <%= application %>
+  enabled: true
+  developer: false
+  log_level: info
+  ssl: false
+  apdex_t: 0.5
+  capture_params: false
+  transaction_tracer:
+    enabled: true
+    transaction_threshold: apdex_f
+    record_sql: obfuscated
+    stack_trace_threshold: 0.500
+  error_collector:
+    enabled: true
+    capture_source: true
