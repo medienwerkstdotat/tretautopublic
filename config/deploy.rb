@@ -11,7 +11,7 @@ set :adapter, "mysql2"
 set :socket, "none"
 
 set :scm, "git"
-set :repository,  "git@github.com:guggug/tretauto.git"
+set :repository,  "git@github.com:medienwerkstdotat/tretautopublic.git"
 
 ["base", "rails", "nginx", "logrotate"].each { |recipe| 
   load(File.join("config", "deploy", "setup", recipe)) 
