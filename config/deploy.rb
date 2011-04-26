@@ -9,7 +9,7 @@ default_run_options[:pty] = true
 set :user, "helmutchlebecek"
 set :adapter, "mysql2"
 set :socket, "none"
-default_run_options[:pty] = true
+#default_run_options[:pty] = true
 set :scm, "git"
 set :repository,  "git@github.com:medienwerkstdotat/tretautopublic.git"
 

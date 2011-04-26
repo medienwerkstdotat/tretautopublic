@@ -12,13 +12,13 @@ set :deploy_to, "/var/www/#{application}"
 set :ip, "80.120.121.229"
 set :db_host, "mysql.antiloop.com"
 set :db_prefix, "rakete_ror_at"
-set :db_password, "rogFaymBi"
+set :db_password, "oyRyquen"
 
 # ssl settings
-set :ssl, true
-set :ssl_cert, "ror.at/ror.at.bundle.crt"
-set :ssl_key, "ror.at/ror.at.no-pw.key"
-set :ssl_chain, "gd_bundle.crt"
+set :ssl, false
+#set :ssl_cert, "ror.at/ror.at.bundle.crt"
+#set :ssl_key, "ror.at/ror.at.no-pw.key"
+#set :ssl_chain, "gd_bundle.crt"
 
 after "deploy:setup", "nginx:setup"
 after "deploy:cold", "nginx:symlink"
