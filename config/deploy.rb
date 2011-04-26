@@ -6,10 +6,10 @@ require "rvm/capistrano"
 
 set :rvm_ruby_string, '1.9.2-p180'
 default_run_options[:pty] = true
-#set :user, "medienwerkstat"
+set :user, "helmutchlebecek"
 set :adapter, "mysql2"
 set :socket, "none"
-
+default_run_options[:pty] = true
 set :scm, "git"
 set :repository,  "git@github.com:medienwerkstdotat/tretautopublic.git"
 
