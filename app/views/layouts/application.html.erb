@@ -3,10 +3,7 @@
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= javascript_include_tag :defaults %>
-	<%= javascript_include_tag 'jquery.dataTables' %>
-	<%= stylesheet_link_tag 'reset' %>
-	<%= stylesheet_link_tag 'text' %>
-	<%= stylesheet_link_tag '960' %>    
+	<%= javascript_include_tag 'jquery.dataTables' %> 
 	<%= stylesheet_link_tag "application" %>
 	<%= stylesheet_link_tag 'demo_page' %>
 
