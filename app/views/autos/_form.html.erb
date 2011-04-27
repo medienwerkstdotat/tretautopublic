@@ -93,80 +93,106 @@
 	</div>
 	<div style="width: 335px; float: left; background: #ccc; padding:0 10px">
  
-  <p>
-    <%= f.label :datenbanknralt %><br />
-    <%= f.text_field :datenbanknralt %>
+  <p class="left margin">
+    <label for="datenbanknralt">DB. Alt</label><br />
+    <%= f.text_field :datenbanknralt, 'size' => 3 %>
   </p>
-  <p >
+  <p class="left margin">
     <%= f.label :kaufdatum %><br />
-    <%= f.date_select :kaufdatum %>
+    <%= f.text_field :kaufdatum, 'size' => 10 %>
   </p>  
   <p>
     <%= f.label :verkaeufer %><br />
-    <%= f.text_field :verkaeufer %>
+    <%= f.text_field :verkaeufer , 'size' => 19 %>
   </p>  
-  <p class="firstcolumn left">
+  <p class="left margin">
     <%= f.label :ebaybenutzername %><br />
-    <%= f.text_field :ebaybenutzername %>
+    <%= f.text_field :ebaybenutzername , 'size' => 18 %>
   </p>  
-  <p class="secondcolumn left">
+  <p class="left">
     <%= f.label :ebayartikelnummer %><br />
-    <%= f.text_field :ebayartikelnummer %>
+    <%= f.text_field :ebayartikelnummer , 'size' => 19 %>
   </p>
-  <p class="typ">
+  <p>
     <%= f.label :modellbeschreibung %><br />
-    <%= f.text_field :modellbeschreibung %>
+    <%= f.text_field :modellbeschreibung , 'size' => 42 %>
   </p>
-  <p class="firstcolumn left">
+  <p class="left margin">
     <%= f.label :farbekauf %><br />
-    <%= f.text_field :farbekauf %>
+    <%= f.text_field :farbekauf , 'size' => 18 %>
   </p>
-  <p class="secondcolumn left">
+  <p class="left">
     <%= f.label :anmerkungnachkauf %><br />
-    <%= f.text_field :anmerkungnachkauf %>
+    <%= f.text_field :anmerkungnachkauf , 'size' => 19 %>
   </p>  
-  <p class="firstcolumn left">
+  <p class="left margin">
     <%= f.label :zahlungsart %><br />
-    <%= f.text_field :zahlungsart %>
+    <%= f.text_field :zahlungsart , 'size' => 18 %>
   </p>
-  <p class="secondcolumn left">
+  <p class="left">
     <%= f.label :zahlungsdatum %><br />
-    <%= f.text_field :zahlungsdatum %>
+    <%= f.text_field :zahlungsdatum , 'size' => 19 %>
   </p>  
 
-
-
-
-
-
-  <p>
+  <p class="left margin">
     <%= f.label :waehrung %><br />
-    <%= f.text_field :waehrung %>
+    <%= f.text_field :waehrung , 'size' => 6 %>
   </p>
-  <p>
+  <p class="left margin">
     <%= f.label :kaufpreis %><br />
-    <%= f.text_field :kaufpreis %>
+    <%= f.text_field :kaufpreis , 'size' => 6 %>
   </p>
-  <p>
+  <p class="left margin">
     <%= f.label :transport %><br />
-    <%= f.text_field :transport %>
+    <%= f.text_field :transport , 'size' => 6 %>
   </p>
-  <p>
+  <p class="left margin">
     <%= f.label :summe %><br />
-    <%= f.text_field :summe %>
+    <%= f.text_field :summe , 'size' => 7 %>
   </p>
-  <p>
+  <p class="left platz">&nbsp;</p>
+  <p class="left margin">
     <%= f.label :ersatzteile %><br />
-    <%= f.text_field :ersatzteile %>
+    <%= f.text_field :ersatzteile , 'size' => 6 %>
   </p>
-  <p>
+  <p class="left margin">
     <%= f.label :restaurier %><br />
-    <%= f.text_field :restaurier %>
+    <%= f.text_field :restaurier , 'size' => 6 %>
   </p>
-  <p>
+  <p class="left margin">
     <%= f.label :gesamt %><br />
-    <%= f.text_field :gesamt %>
+    <%= f.text_field :gesamt , 'size' => 7 %>
   </p>
+ <p class="left margin">
+    <label for="fw">fremdw.</label><br />
+    <%= f.text_field :fw , 'size' => 6 %>
+  </p>
+ <p class="left margin">
+    <label for="fwkaufpreis">kaufpreis</label><br />
+    <%= f.text_field :fwkaufpreis , 'size' => 6 %>
+  </p>
+<p class="left margin">
+    <label for="fwtransport">transport</label><br />
+    <%= f.text_field :fwtransport , 'size' => 6 %>
+  </p>
+<p class="left margin">
+    <label for="fwsumme">summe</label><br />
+    <%= f.text_field :fwsumme , 'size' => 7 %>
+  </p>
+<p class="left platz">&nbsp;</p>
+<p class="left margin">
+    <label for="fwsersatzteile">ersatzteile</label><br />
+    <%= f.text_field :fwersatzteile , 'size' => 6 %>
+  </p>
+<p class="left margin">
+    <label for="fwrestaurier">restaurier</label><br />
+    <%= f.text_field :fwrestaurier , 'size' => 6 %>
+  </p>
+<p class="left margin">
+    <label for="fwgesamt">gesamt</label><br />
+    <%= f.text_field :fwgesamt , 'size' => 7 %>
+  </p>
+	
 </div>
   <p style="clear: both;"><%= f.submit %></p>
 <% end %>

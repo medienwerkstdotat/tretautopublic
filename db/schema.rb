@@ -10,16 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110401213529) do
+ActiveRecord::Schema.define(:version => 20110427204635) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
     t.string   "asset_content_type"
     t.integer  "asset_file_size"
     t.datetime "asset_updated_at"
-    t.integer  "post_id"
+    t.integer  "auto_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.binary   "thumbnail",          :limit => 1
   end
 
   create_table "autos", :force => true do |t|
@@ -62,6 +63,13 @@ ActiveRecord::Schema.define(:version => 20110401213529) do
     t.string   "gesamt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "fw"
+    t.string   "fwkaufpreis"
+    t.string   "fwtransport"
+    t.string   "fwsumme"
+    t.string   "fwersatzteile"
+    t.string   "fwrestaurier"
+    t.string   "fwgesamt"
   end
 
 end
