@@ -1,0 +1,10 @@
+<%= rails_env %>:
+  enable_star: 1
+  min_infix_len: 1
+  html_strip: 1
+  host: <%= thinking_sphinx_host %>
+  port: <%= thinking_sphinx_port %>
+  searchd_log_file: <%= shared_path %>/log/searchd.log
+  query_log_file: <%= shared_path %>/log/searchd.query.log
+  pid_file: <%= shared_path %>/pids/searchd.<%= rails_env %>.pid
+  searchd_file_path: <%= shared_path %>/db/sphinx/<%= rails_env %>/

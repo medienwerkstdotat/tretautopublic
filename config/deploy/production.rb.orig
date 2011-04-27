@@ -1,0 +1,50 @@
+set :rails_env, "production"
+set :branch, "master"
+set :application, "ag.gildemeister.com"
+set :server_names, [{ :name => "test.gildemeister.com"}]
+
+role :app, "ag.gildemeister.com"
+role :web, "ag.gildemeister.com"
+role :db,  "ag.gildemeister.com", :primary => true
+set :deploy_to, "/var/www/#{application}"
+
+# application setup
+set :ip, "10.5.2.173"
+set :http_port, "8080"
+set :https_port, "8443"
+set :db_prefix, "gildemeister_ag"
+set :db_password, "nAps78fi"
+
+# ssl settings
+set :ssl, true
+set :ssl_cert, "gildemeister.com/gildemeister.com.bundle.crt"
+set :ssl_key, "gildemeister.com/gildemeister.com.no-pw.key"
+set :ssl_chain, "gd_bundle.crt"
+
+# other settings for the stuff below
+set :thinking_sphinx_port, 9314
+
+set :impala_settings, {
+  :site_name => "GILDEMEISTER",
+  :default_pagination_page => 1,
+  :default_pagination_per_page => 3,
+  :online => true,
+  :landingpage => "home",
+  :time_zone => "Berlin",
+  :default_locale => "de",
+  :key => "ag-gildemeister-com",
+  :secret => "9b29fa694cd7c9f463d7a4f574f9d1e5ed0aea162fb3a16f3c89a88b1971fa592a2f2000157cee1283259f2a131c55f976c2aead0e0751741efe7d69327734d4",
+  :rest_auth_site_key => "c71dfb1357e1a40b34172988d1763765791fcc10",
+  :command_path => "/usr/local/bin/"
+}
+
+# hooks that are special for this environment
+<<<<<<< HEAD
+after "deploy:setup", "apache:setup"
+after "deploy:cold", "apache:symlink"
+after "deploy:cold", "apache:reload"
+=======
+after "deploy:setup", "nginx:setup"
+after "deploy:cold", "nginx:symlink"
+after "deploy:cold", "nginx:reload"
+>>>>>>> development

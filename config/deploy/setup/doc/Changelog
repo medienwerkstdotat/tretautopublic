@@ -1,0 +1,15 @@
+v0.4:
+Added logrotate
+
+v0.3:
+Don't symlink internal to public directory
+
+v0.2:
+Added rails.rb
+TODO: add "rails" after "base" in your deploy.rb
+
+v0.1:
+Now loading seeds after cap deploy:cold
+
+v0.0:
+Starting version

@@ -1,0 +1,18 @@
+<% if exists?(:logrotate) %>
+
+  every 1.days do
+    command "sudo /usr/sbin/logrotate <%= shared_path %>/config/logrotate.conf > /dev/null"
+  end
+
+<% end %>
+<% if exists?(:thinkingsphinx) %>
+
+  every :reboot do
+    rake "ts:start > /dev/null"
+  end
+
+  every 5.minutes do
+    command "/usr/local/bin/indexer --config <%= current_path %>/config/<%= rails_env %>.sphinx.conf --all --rotate > /dev/null"
+  end
+  
+<% end %>
