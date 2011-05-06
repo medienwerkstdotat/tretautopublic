@@ -1,163 +1,195 @@
-<img src="/images/tretauto-logo.jpg" alt="Tretauto Logo">
-<p>
-  <strong>Hersteller:</strong>
-  <%= @auto.hersteller %>
+<div><img src="/images/tretauto-logo.jpg" alt="Tretauto Logo"></div>
+<div class="narrow" style="width: 335px; float: left;">
+<p class="left" style="width: 20px">
+	<label>id:</label><br />
+	<%= @auto.id %>
 </p>
-<p>
-  <strong>Modell:</strong>
-  <%= @auto.modell %>
+<p class="left hersteller">
+  <label>Hersteller:</label><br />
+  <%= @auto.hersteller %>&nbsp;
 </p>
-<p>
-  <strong>Land:</strong>
-  <%= @auto.land %>
+<p class="modell_">
+  <label>Modell:</label><br />
+  <%= @auto.modell %>&nbsp;
+</p>
+<p class="firstc left">
+  <label>Land:</label><br />
+  <%= @auto.land %>&nbsp;
+</p>
+<p class="secondc left">
+  <label>Baujahr:</label><br />
+  <%= @auto.baujahr %>&nbsp;
+</p>
+<br style="clear: both;">
+<p class="typ">
+  <label>Typ:</label><br />
+  <%= @auto.typ %>&nbsp;
+</p>
+<p class="firstc left">
+  <label>Status:</label><br />
+  <%= @auto.status %>&nbsp;
+</p>
+<p class="secondc left">
+  <label>Farbe:</label><br />
+  <%= @auto.farbe %>&nbsp;
+</p>
+<p class="firstc left">
+  <label>Konstruktion:</label><br />
+  <%= @auto.konstruktion %>&nbsp;
+</p>
+<p class="secondc left">
+  <label>Antrieb:</label><br />
+  <%= @auto.antrieb %>&nbsp;
+</p>
+<p class="firstc left">
+  <label>Raeder:</label><br />
+  <%= @auto.raeder %>&nbsp;
+</p>
+<p class="secondc left">
+  <label>Ausstattung:</label><br />
+  <%= @auto.ausstattung %>&nbsp;
 </p>
 
+
+
+
+</div>
+<div style="width: 230px; float: left; padding:25px 10px;">
 <p>
 	<% @auto.assets.each_with_index do |asset| %>
 
 		<p><%= link_to image_tag(asset.asset.url(:thumb)), asset.asset.url(:original) %></p>
 	
 	<% end %>
+</p>
+</div>
+<div class="narrow" style="width: 335px; float: left;">
+
 
 <p>
-  <strong>Baujahr:</strong>
-  <%= @auto.baujahr %>
-</p>
-<p>
-  <strong>Typ:</strong>
-  <%= @auto.typ %>
-</p>
-<p>
-  <strong>Datenbanknr:</strong>
+  <label>Datenbanknr:</label><br />
   <%= @auto.datenbanknr %>
 </p>
 <p>
-  <strong>Datenbanknralt:</strong>
+  <label>Datenbanknralt:</label><br />
   <%= @auto.datenbanknralt %>
 </p>
 <p>
-  <strong>Status:</strong>
+  <label>Status:</label><br />
   <%= @auto.status %>
 </p>
 <p>
-  <strong>Farbe:</strong>
+  <label>Farbe:</label><br />
   <%= @auto.farbe %>
 </p>
 <p>
-  <strong>Antrieb:</strong>
+  <label>Antrieb:</label><br />
   <%= @auto.antrieb %>
 </p>
 <p>
-  <strong>Konstruktion:</strong>
+  <label>Konstruktion:</label><br />
   <%= @auto.konstruktion %>
-</p>
-<p>
-  <strong>Raeder:</strong>
-  <%= @auto.raeder %>
-</p>
-<p>
-  <strong>Ausstattung:</strong>
-  <%= @auto.ausstattung %>
-</p>
-<p>
-  <strong>Abmessungl:</strong>
-  <%= @auto.abmessungl %>
-</p>
-<p>
-  <strong>Abmessungb:</strong>
-  <%= @auto.abmessungb %>
-</p>
-<p>
-  <strong>Abmessungh:</strong>
-  <%= @auto.abmessungh %>
-</p>
-<p>
-  <strong>Gewichtinkg:</strong>
-  <%= @auto.gewichtinkg %>
-</p>
-<p>
-  <strong>Relevanz:</strong>
-  <%= @auto.relevanz %>
-</p>
-<p>
-  <strong>Geschaetztermarktwert:</strong>
-  <%= @auto.geschaetztermarktwert %>
-</p>
-<p>
-  <strong>Sonstiges:</strong>
-  <%= @auto.sonstiges %>
-</p>
-<p>
-  <strong>Anmerkungen:</strong>
-  <%= @auto.anmerkungen %>
-</p>
-<p>
-  <strong>Kaufdatum:</strong>
-  <%= @auto.kaufdatum %>
-</p>
-<p>
-  <strong>Ebaybenutzername:</strong>
-  <%= @auto.ebaybenutzername %>
-</p>
-<p>
-  <strong>Verkaeufer:</strong>
-  <%= @auto.verkaeufer %>
-</p>
-<p>
-  <strong>Ebayartikelnummer:</strong>
-  <%= @auto.ebayartikelnummer %>
-</p>
-<p>
-  <strong>Modellbeschreibung:</strong>
-  <%= @auto.modellbeschreibung %>
-</p>
-<p>
-  <strong>Farbekauf:</strong>
-  <%= @auto.farbekauf %>
-</p>
-<p>
-  <strong>Anmerkungnachkauf:</strong>
-  <%= @auto.anmerkungnachkauf %>
-</p>
-<p>
-  <strong>Zahlungsart:</strong>
-  <%= @auto.zahlungsart %>
-</p>
-<p>
-  <strong>Zahlungsdatum:</strong>
-  <%= @auto.zahlungsdatum %>
-</p>
-<p>
-  <strong>Waehrung:</strong>
-  <%= @auto.waehrung %>
-</p>
-<p>
-  <strong>Kaufpreis:</strong>
-  <%= @auto.kaufpreis %>
-</p>
-<p>
-  <strong>Transport:</strong>
-  <%= @auto.transport %>
-</p>
-<p>
-  <strong>Summe:</strong>
-  <%= @auto.summe %>
-</p>
-<p>
-  <strong>Ersatzteile:</strong>
-  <%= @auto.ersatzteile %>
-</p>
-<p>
-  <strong>Restaurier:</strong>
-  <%= @auto.restaurier %>
-</p>
-<p>
-  <strong>Gesamt:</strong>
-  <%= @auto.gesamt %>
 </p>
 
 <p>
-  <%= link_to "Edit", edit_auto_path(@auto) %> |
-  <%= link_to "Destroy", @auto, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", autos_path %>
+  <label>Abmessungl:</label><br />
+  <%= @auto.abmessungl %>
+</p>
+<p>
+  <label>Abmessungb:</label><br />
+  <%= @auto.abmessungb %>
+</p>
+<p>
+  <label>Abmessungh:</label><br />
+  <%= @auto.abmessungh %>
+</p>
+<p>
+  <label>Gewichtinkg:</label><br />
+  <%= @auto.gewichtinkg %>
+</p>
+<p>
+  <label>Relevanz:</label><br />
+  <%= @auto.relevanz %>
+</p>
+<p>
+  <label>Geschaetztermarktwert:</label><br />
+  <%= @auto.geschaetztermarktwert %>
+</p>
+<p>
+  <label>Sonstiges:</label><br />
+  <%= @auto.sonstiges %>
+</p>
+<p>
+  <label>Anmerkungen:</label><br />
+  <%= @auto.anmerkungen %>
+</p>
+<p>
+  <label>Kaufdatum:</label><br />
+  <%= @auto.kaufdatum %>
+</p>
+<p>
+  <label>Ebaybenutzername:</label><br />
+  <%= @auto.ebaybenutzername %>
+</p>
+<p>
+  <label>Verkaeufer:</label><br />
+  <%= @auto.verkaeufer %>
+</p>
+<p>
+  <label>Ebayartikelnummer:</label><br />
+  <%= @auto.ebayartikelnummer %>
+</p>
+<p>
+  <label>Modellbeschreibung:</label><br />
+  <%= @auto.modellbeschreibung %>
+</p>
+<p>
+  <label>Farbekauf:</label><br />
+  <%= @auto.farbekauf %>
+</p>
+<p>
+  <label>Anmerkungnachkauf:</label><br />
+  <%= @auto.anmerkungnachkauf %>
+</p>
+<p>
+  <label>Zahlungsart:</label><br />
+  <%= @auto.zahlungsart %>
+</p>
+<p>
+  <label>Zahlungsdatum:</label><br />
+  <%= @auto.zahlungsdatum %>
+</p>
+<p>
+  <label>Waehrung:</label><br />
+  <%= @auto.waehrung %>
+</p>
+<p>
+  <label>Kaufpreis:</label><br />
+  <%= @auto.kaufpreis %>
+</p>
+<p>
+  <label>Transport:</label><br />
+  <%= @auto.transport %>
+</p>
+<p>
+  <label>Summe:</label><br />
+  <%= @auto.summe %>
+</p>
+<p>
+  <label>Ersatzteile:</label><br />
+  <%= @auto.ersatzteile %>
+</p>
+<p>
+  <label>Restaurier:</label><br />
+  <%= @auto.restaurier %>
+</p>
+<p>
+  <label>Gesamt:</label><br />
+  <%= @auto.gesamt %>
+</p>
+</div>
+<p class="button">
+  <%= link_to "Editieren", edit_auto_path(@auto) %>
+  <%= link_to "Löschen", @auto, :confirm => 'Are you sure?', :method => :delete %>
+  <%= link_to "Alle Autos anzeigen", autos_path %>
 </p>

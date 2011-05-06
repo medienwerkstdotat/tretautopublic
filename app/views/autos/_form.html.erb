@@ -1,6 +1,6 @@
 <%= form_for @auto, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
-	<div class="" style="width: 335px; float: left; padding:0 10px">
+	<div class="narrow" style="width: 335px; float: left;">
 		<p class="left">
 		<%= f.label :id %><br />
 		<%= f.text_field :id,  'size' => 2 %>
@@ -68,12 +68,13 @@
 	    <%= f.label :geschaetztermarktwert %><br />
 	    <%= f.text_field :geschaetztermarktwert %>
 	  </p>
+	<br style="clear:both;">
 	  <p class="sonstiges">
 	    <%= f.label :sonstiges %><br />
 	    <%= f.text_area :sonstiges %>
 	  </p>
 	</div>
-	<div style="width: 230px; float: left; padding:0 10px;">
+	<div class="file-style">
 		<%= f.fields_for :assets do |asset_fields| %>
 			<% if asset_fields.object.new_record? %>
 				<p>
@@ -91,7 +92,7 @@
 			<% end %>
 		<% end %>
 	</div>
-	<div style="width: 335px; float: left; background: #ccc; padding:0 10px">
+	<div class="narrow" style="width: 335px; float: left; background: #ccc;">
  
   <p class="left margin">
     <label for="datenbanknralt">DB. Alt</label><br />

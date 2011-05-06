@@ -84,6 +84,7 @@ tr.odd, tr.even {
 
 tr.odd:hover, tr.even:hover {
 	border-left: 10px solid #ae0d1b;
+	margin-left: -10px;
 }
 
 table {
@@ -125,9 +126,7 @@ table {
 }
 
 input[type="file"] {
-   font-size:10px;
-	width: 30px;
-	margin-left: -30px;
+	margin-left: -50px;
 }
 
 label {
@@ -152,11 +151,20 @@ label {
 	clear: both;
 }
 
+.modell_ {
+	margin-left: 32px;
+	clear: both;
+}
+
 input {
 	font-size: 12px;
 }
 
 .firstcolumn input, .secondcolumn input {
+	width: 130px;
+}
+
+.firstc, .secondc {
 	width: 130px;
 }
 
@@ -196,4 +204,63 @@ input {
 
 .platz {
 	margin-right: 78px;
+}
+
+.dataTables_info, 
+.dataTables_paginate {
+	float: left;
+	margin-top: 20px;
+}
+
+.dataTables_info {
+	margin-right: 20px;
+	padding-top: 3px;
+}
+
+p.button {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 80px;
+}
+
+.button a, #auto_submit {
+	margin-right: 20px;
+	margin-bottom: 40px;
+	margin-top: 20px;
+	background: #ae0d1b;
+	background: #CCCCCC;
+	padding: 3px 10px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	float: right;
+	color: #000;
+	text-decoration: none;
+	font-size: 14px !important;
+}
+
+.button a {
+	padding-bottom: 4px !important;
+	padding-top: 4px !important;
+}
+
+.narrow p {
+	margin-top:0;
+	margin-bottom:0;
+	font-size: 12px;
+}
+
+.narrow {
+	padding: 10px 10px 20px 10px;
+	margin-top: 10px;
+}
+
+.file-style {
+	width: 230px; 
+	float: left; 
+	padding:25px 10px;
+}
+
+table tr:last-child {
+	border-bottom: 1px solid #AE0D1B;
 }

@@ -1,0 +1,137 @@
+
+
+body, #container {
+  width: 105% !important;
+}
+
+
+input[type="file"] {
+	display: none;
+}
+
+label {
+	font-size: 10px;
+	text-transform: uppercase;
+}
+
+.left {
+	float: left;
+}
+
+.hersteller {
+	margin-left: 10px;
+}
+
+.hersteller input, .modell input {
+	font-weight: bold;
+}
+
+.modell {
+	margin-left: 48px;
+	clear: both;
+}
+
+.modell_ {
+	margin-left: 32px;
+	clear: both;
+}
+
+input {
+	font-size: 12px;
+}
+
+.firstcolumn input, .secondcolumn input {
+	width: 130px;
+}
+
+.firstc, .secondc {
+	width: 130px;
+}
+
+.secondcolumn {
+	margin-left: 10px;
+}
+
+.firstcolumn textarea, .secondcolumn textarea {
+	width: 130px;
+	height: 40px;
+}
+
+.secondcolumn {
+	margin-left: 10px;
+}
+
+.clear {
+	clear: both;
+}
+
+.typ input {
+	width: 277px;
+}
+
+.firstofthreecolumns input {
+	width: 34.2px;
+}
+
+.sonstiges textarea {
+	width: 277px;
+	height: 150px;
+}
+
+.margin {
+	margin-right: 12px;
+}
+
+.platz {
+	margin-right: 78px;
+}
+
+.dataTables_info, 
+.dataTables_paginate {
+	float: left;
+}
+
+.dataTables_info {
+	margin-right: 20px;
+	padding-top: 3px;
+}
+
+p.button {
+	margin: 0;
+	padding: 0;
+}
+
+.button a, #auto_submit {
+	margin-right: 20px;
+	margin-bottom: 40px;
+	background: #ae0d1b;
+	background: #CCCCCC;
+	padding: 3px 10px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	float: right;
+	color: #000;
+	text-decoration: none;
+	font-size: 14px !important;
+}
+
+.button a {
+	padding-bottom: 4px !important;
+	padding-top: 4px !important;
+}
+
+.narrow p {
+	margin-top:0;
+	margin-bottom:0;
+	font-size: 12px;
+}
+
+.narrow {
+	padding: 10px 10px 20px 10px;
+	margin-top: 10px;
+}
+
+.file-style, .button, img, #auto_submit {
+	display: none;
+}

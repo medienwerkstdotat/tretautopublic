@@ -2,7 +2,7 @@
 <table id="example">
 	<thead>
   		<tr>
-			<th width=120 >Vorschaubild</th>
+			<th width=120 >&nbsp;</th>
 			<th width=30 >ID</th>
 		    <th>Hersteller</th>
 		    <th>Modell</th>
@@ -39,9 +39,9 @@
 		    <th>Kaufpreis</th>
 		    <th>Transport</th>
 		    <th>Summe</th>
-		    <th>Ersatzteile</th> -->
+		    <th>Ersatzteile</th> 
 		    <th>Restaurier</th>
-		    <!-- <th>Gesamt</th> -->
+		    <th>Gesamt</th> -->
 			<th></th>
 			<th></th>
 			<th></th>
@@ -49,7 +49,7 @@
 		</thead>
 	<tbody>
   <% for auto in @autos %>
-    <tr>
+    <tr onclick="">
 		<td>
 		
 		<% auto.assets.each_with_index do |asset, i| 
@@ -97,16 +97,16 @@
             <td><%= auto.kaufpreis %></td>
             <td><%= auto.transport %></td>
             <td><%= auto.summe %></td>
-            <td><%= auto.ersatzteile %></td> -->
+            <td><%= auto.ersatzteile %></td>
             <td><%= auto.restaurier %></td>
-            <!-- <td><%= auto.gesamt %></td> -->
-      <td><%= link_to image_tag("/images/view.png", :border=>0), auto %></td>
-      <td><%= link_to image_tag("/images/edit.png", :border=>0), edit_auto_path(auto) %></td>
-	  <td><%= link_to image_tag("/images/delete.png", :border=>0), auto, :confirm => 'Are you sure?', :method => :delete %></td>
+            <td><%= auto.gesamt %></td> -->
+      <td width= 50><%= link_to image_tag("/images/view.png", :border=>0), auto %></td>
+      <td width= 50><%= link_to image_tag("/images/edit.png", :border=>0), edit_auto_path(auto) %></td>
+	  <td width= 50><%= link_to image_tag("/images/delete.png", :border=>0), auto, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
 
   <% end %>
 </tbody>
 </table>
 
-<p><%= link_to "New Auto", new_auto_path %></p>
+<p class="button"><%= link_to "Neues Auto anlegen", new_auto_path %></p>
