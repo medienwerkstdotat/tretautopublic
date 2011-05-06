@@ -50,7 +50,7 @@
 	<tbody>
   <% for auto in @autos %>
     <tr onclick="">
-		<td>
+		<td><span style="margin-left: 20px">
 		
 		<% auto.assets.each_with_index do |asset, i| 
 			break if i == 1;
@@ -59,7 +59,7 @@
 			<%= image_tag(asset.asset.url(:thumb)) %>
 			
 		<% end %>
-		
+		</span>
 	</td>
 	  <td><%= auto.id %></td>
       <td><%= auto.hersteller %></td>
