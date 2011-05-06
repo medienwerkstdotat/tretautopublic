@@ -1,57 +1,78 @@
 <div><img src="/images/tretauto-logo.jpg" alt="Tretauto Logo"></div>
 <div class="narrow" style="width: 335px; float: left;">
-<p class="left" style="width: 20px">
-	<label>id:</label><br />
+<p class="left" style="width: 50px">
+	<label>id</label><br />
 	<%= @auto.id %>
 </p>
 <p class="left hersteller">
-  <label>Hersteller:</label><br />
+  <label>Hersteller</label><br />
   <%= @auto.hersteller %>&nbsp;
 </p>
 <p class="modell_">
-  <label>Modell:</label><br />
+  <label>Modell</label><br />
   <%= @auto.modell %>&nbsp;
 </p>
 <p class="firstc left">
-  <label>Land:</label><br />
+  <label>Land</label><br />
   <%= @auto.land %>&nbsp;
 </p>
 <p class="secondc left">
-  <label>Baujahr:</label><br />
+  <label>Baujahr</label><br />
   <%= @auto.baujahr %>&nbsp;
 </p>
 <br style="clear: both;">
 <p class="typ">
-  <label>Typ:</label><br />
+  <label>Typ</label><br />
   <%= @auto.typ %>&nbsp;
 </p>
 <p class="firstc left">
-  <label>Status:</label><br />
+  <label>Status</label><br />
   <%= @auto.status %>&nbsp;
 </p>
 <p class="secondc left">
-  <label>Farbe:</label><br />
+  <label>Farbe</label><br />
   <%= @auto.farbe %>&nbsp;
 </p>
 <p class="firstc left">
-  <label>Konstruktion:</label><br />
+  <label>Konstruktion</label><br />
   <%= @auto.konstruktion %>&nbsp;
 </p>
 <p class="secondc left">
-  <label>Antrieb:</label><br />
+  <label>Antrieb</label><br />
   <%= @auto.antrieb %>&nbsp;
 </p>
 <p class="firstc left">
-  <label>Raeder:</label><br />
+  <label>Raeder</label><br />
   <%= @auto.raeder %>&nbsp;
 </p>
 <p class="secondc left">
-  <label>Ausstattung:</label><br />
+  <label>Ausstattung</label><br />
   <%= @auto.ausstattung %>&nbsp;
 </p>
-
-
-
+<p class="firstofthreecolumns left">
+	  <label>Abmessungen LxBxH</label><br />
+	  <span style="width: 20px"><%= @auto.abmessungl %>&nbsp;</span>
+	  <span style="width: 20px"><%= @auto.abmessungb %>&nbsp;</span>
+	  <span style="width: 20px"><%= @auto.abmessungh %>&nbsp;</span>
+</p>
+<p class="secondcolumn left">
+  <label>Gewichtinkg</label><br />
+  <%= @auto.gewichtinkg %>&nbsp;
+</p>
+<br style="clear:both">
+<p class="firstc left">
+  <label>Relevanz</label><br />
+  <%= @auto.relevanz %>&nbsp;
+</p>
+<p class="secondc left">
+  <label>Geschaetztermarktwert</label><br />
+  <%= @auto.geschaetztermarktwert %>&nbsp;
+</p>
+<br style="clear:both">
+<p>
+  <label>Sonstiges</label><br />
+  <%= @auto.sonstiges %>&nbsp;
+</p>
 
 </div>
 <div style="width: 230px; float: left; padding:25px 10px;">
@@ -63,129 +84,120 @@
 	<% end %>
 </p>
 </div>
-<div class="narrow" style="width: 335px; float: left;">
 
+<div class="narrow" style="width: 335px; float: left; background: #ccc;">
 
-<p>
-  <label>Datenbanknr:</label><br />
-  <%= @auto.datenbanknr %>
+<p class="left" style="width: 50px">
+  <label>DB. alt</label><br />
+  <%= @auto.datenbanknralt %>&nbsp;
+</p>
+<p class="left margin">
+  <label>Kaufdatum</label><br />
+  <%= @auto.kaufdatum %>&nbsp;
 </p>
 <p>
-  <label>Datenbanknralt:</label><br />
-  <%= @auto.datenbanknralt %>
+  <label>Verkaeufer</label><br />
+  <%= @auto.verkaeufer %>&nbsp;
 </p>
-<p>
-  <label>Status:</label><br />
-  <%= @auto.status %>
+<p class="left firstc">
+  <label>Ebaybenutzername</label><br />
+  <%= @auto.ebaybenutzername %>&nbsp;
 </p>
-<p>
-  <label>Farbe:</label><br />
-  <%= @auto.farbe %>
+<p class="left secondc">
+  <label>Ebayartikelnummer</label><br />
+  <%= @auto.ebayartikelnummer %>&nbsp;
 </p>
+<br style="clear:both;">
 <p>
-  <label>Antrieb:</label><br />
-  <%= @auto.antrieb %>
+  <label>Modellbeschreibung</label><br />
+  <%= @auto.modellbeschreibung %>&nbsp;
 </p>
-<p>
-  <label>Konstruktion:</label><br />
-  <%= @auto.konstruktion %>
+<br style="clear:both;">
+<p class="left firstc">
+  <label>Farbekauf</label><br />
+  <%= @auto.farbekauf %>&nbsp;
 </p>
-
-<p>
-  <label>Abmessungl:</label><br />
-  <%= @auto.abmessungl %>
-</p>
-<p>
-  <label>Abmessungb:</label><br />
-  <%= @auto.abmessungb %>
-</p>
-<p>
-  <label>Abmessungh:</label><br />
-  <%= @auto.abmessungh %>
-</p>
-<p>
-  <label>Gewichtinkg:</label><br />
-  <%= @auto.gewichtinkg %>
-</p>
-<p>
-  <label>Relevanz:</label><br />
-  <%= @auto.relevanz %>
-</p>
-<p>
-  <label>Geschaetztermarktwert:</label><br />
-  <%= @auto.geschaetztermarktwert %>
-</p>
-<p>
-  <label>Sonstiges:</label><br />
-  <%= @auto.sonstiges %>
-</p>
-<p>
-  <label>Anmerkungen:</label><br />
-  <%= @auto.anmerkungen %>
-</p>
-<p>
-  <label>Kaufdatum:</label><br />
-  <%= @auto.kaufdatum %>
-</p>
-<p>
-  <label>Ebaybenutzername:</label><br />
-  <%= @auto.ebaybenutzername %>
-</p>
-<p>
-  <label>Verkaeufer:</label><br />
-  <%= @auto.verkaeufer %>
-</p>
-<p>
-  <label>Ebayartikelnummer:</label><br />
-  <%= @auto.ebayartikelnummer %>
-</p>
-<p>
-  <label>Modellbeschreibung:</label><br />
-  <%= @auto.modellbeschreibung %>
-</p>
-<p>
-  <label>Farbekauf:</label><br />
-  <%= @auto.farbekauf %>
-</p>
-<p>
-  <label>Anmerkungnachkauf:</label><br />
+<p class="left secondc">
+  <label>Anmerkungnachkauf</label><br />
   <%= @auto.anmerkungnachkauf %>
 </p>
-<p>
-  <label>Zahlungsart:</label><br />
+<br style="clear:both;">
+<p class="left firstc">
+  <label>Zahlungsart</label><br />
   <%= @auto.zahlungsart %>
 </p>
-<p>
-  <label>Zahlungsdatum:</label><br />
+<p class="left secondc">
+  <label>Zahlungsdatum</label><br />
   <%= @auto.zahlungsdatum %>
 </p>
-<p>
-  <label>Waehrung:</label><br />
+<br style="clear:both;">
+<p class="left" style="width:25%;">
+  <label>Waehrung</label><br />
   <%= @auto.waehrung %>
 </p>
-<p>
-  <label>Kaufpreis:</label><br />
+<p class="left" style="width:25%;">
+  <label>Kaufpreis</label><br />
   <%= @auto.kaufpreis %>
 </p>
-<p>
-  <label>Transport:</label><br />
+<p class="left" style="width:25%;">
+  <label>Transport</label><br />
   <%= @auto.transport %>
 </p>
-<p>
-  <label>Summe:</label><br />
+<p class="left" style="width:25%;">
+  <label>Summe</label><br />
   <%= @auto.summe %>
 </p>
-<p>
+
+<p class="left" style="width:25%;">
+	&nbsp;
+</p>
+
+<p class="left" style="width:25%;">
+  <label>Ersatzteile</label><br />
+  <%= @auto.ersatzteile %>&nbsp;
+</p>
+<p class="left" style="width:25%;">
+  <label>Restaurier</label><br />
+  <%= @auto.restaurier %>&nbsp;
+</p>
+<p class="left" style="width:25%;">
+  <label>Gesamt</label><br />
+  <%= @auto.gesamt %>&nbsp;
+</p>
+<br style="clear:both;">
+
+<p class="left" style="width:25%;">
+  <label>Fremdw.</label><br />
+  <%= @auto.fw %>&nbsp;
+</p>
+<p class="left" style="width:25%;">
+  <label>Kaufpreis</label><br />
+  <%= @auto.fwkaufpreis %>&nbsp;
+</p>
+<p class="left" style="width:25%;">
+  <label>Transport:</label><br />
+  <%= @auto.fwtransport %>&nbsp;
+</p>
+<p class="left" style="width:25%;">
+  <label>Summe:</label><br />
+  <%= @auto.fwsumme %>&nbsp;
+</p>
+
+<p class="left" style="width:25%;">
+	&nbsp;
+</p>
+
+<p class="left" style="width:25%;">
   <label>Ersatzteile:</label><br />
-  <%= @auto.ersatzteile %>
+  <%= @auto.fwersatzteile %>&nbsp;
 </p>
-<p>
+<p class="left" style="width:25%;">
   <label>Restaurier:</label><br />
-  <%= @auto.restaurier %>
+  <%= @auto.fwrestaurier %>&nbsp;
 </p>
-<p>
+<p class="left" style="width:25%;">
   <label>Gesamt:</label><br />
-  <%= @auto.gesamt %>
+  <%= @auto.fwgesamt %>&nbsp;
 </p>
 </div>
 <p class="button">

@@ -130,7 +130,7 @@ input[type="file"] {
 }
 
 label {
-	font-size: 10px;
+	font-size: 9px;
 	text-transform: uppercase;
 }
 
@@ -152,7 +152,7 @@ label {
 }
 
 .modell_ {
-	margin-left: 32px;
+	margin-left: 62px;
 	clear: both;
 }
 
@@ -248,6 +248,7 @@ p.button {
 	margin-top:0;
 	margin-bottom:0;
 	font-size: 12px;
+	
 }
 
 .narrow {
