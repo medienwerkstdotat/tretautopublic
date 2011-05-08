@@ -966,10 +966,10 @@
 				"sSearch": "Suchen",
 				"sUrl": "",
 				"oPaginate": {
-					"sFirst":    "erstes",
-					"sPrevious": "voriges",
-					"sNext":     "nächstes",
-					"sLast":     "letztes"
+					"sFirst":    "erster",
+					"sPrevious": "voriger",
+					"sNext":     "nächster",
+					"sLast":     "letzter"
 				},
 				"fnInfoCallback": null
 			};

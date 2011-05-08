@@ -87,7 +87,8 @@
 			<% unless asset_fields.object.new_record? %>
 				<p>
 					<%= link_to image_tag(asset_fields.object.asset.url(:thumb)), asset_fields.object.asset.url(:original) %>
-					<%= asset_fields.check_box :_destroy %> delete
+					<%= asset_fields.text_field :id , 'size' => 2 %>
+					<%= asset_fields.check_box :_destroy %> löschen
 				</p>
 			<% end %>
 		<% end %>
