@@ -1,6 +1,6 @@
 <%= form_for @auto, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
-	<div class="narrow" style="width: 335px; float: left;">
+	<div class="narrow" style="width: 335px; float: left; margin-left: -9px;">
 		<p class="left">
 		<%= f.label :id %><br />
 		<%= f.text_field :id,  'size' => 2 %>
@@ -52,12 +52,12 @@
 	  </p>
 	<p class="firstofthreecolumns left">
 	    <%= f.label :description, "ABMeSSuNgeN LxBxH" %><br />
-	    <%= f.text_field :abmessungl, 'size' => 2 %>
-	    <%= f.text_field :abmessungb, 'size' => 2 %>
-	    <%= f.text_field :abmessungh, 'size' => 2  %>
+	    <%= f.text_field :abmessungl, 'size' => 2 , :value => number_with_precision(@auto.abmessungl, :precision => 1) %>
+	    <%= f.text_field :abmessungb, 'size' => 2 , :value => number_with_precision(@auto.abmessungb, :precision => 1) %>
+	    <%= f.text_field :abmessungh, 'size' => 2 , :value => number_with_precision(@auto.abmessungh, :precision => 1) %>
 	  </p>
 	  <p class="secondcolumn left">
-	    <%= f.label :gewichtinkg %><br />
+	    <label for="gewichtinkg">Gewicht in kg</label><br />
 	    <%= f.text_field :gewichtinkg %>
 	  </p>
 	  <p class="firstcolumn left">
@@ -65,8 +65,8 @@
 	    <%= f.text_field :relevanz %>
 	  </p>
 	  <p class="secondcolumn left">
-	    <%= f.label :geschaetztermarktwert %><br />
-	    <%= f.text_field :geschaetztermarktwert %>
+	    <label for="geschaetztermarktwert">Marktwert geschätzt</label><br />
+	    <%= f.text_field :geschaetztermarktwert , :value => number_with_precision(@auto.geschaetztermarktwert, :precision => 2) %>
 	  </p>
 	<br style="clear:both;">
 	  <p class="sonstiges">
@@ -108,11 +108,11 @@
     <%= f.text_field :verkaeufer , 'size' => 19 %>
   </p>  
   <p class="left margin">
-    <%= f.label :ebaybenutzername %><br />
+    <label for="ebaybenutzername">Ebay Benutzername</label><br />
     <%= f.text_field :ebaybenutzername , 'size' => 18 %>
   </p>  
   <p class="left">
-    <%= f.label :ebayartikelnummer %><br />
+    <label for="ebayartikelnummer">Ebay Artikelnummer</label><br />
     <%= f.text_field :ebayartikelnummer , 'size' => 19 %>
   </p>
   <p>
@@ -120,11 +120,11 @@
     <%= f.text_field :modellbeschreibung , 'size' => 42 %>
   </p>
   <p class="left margin">
-    <%= f.label :farbekauf %><br />
+    <label for="farbekauf">Farbe kauf</label><br />
     <%= f.text_field :farbekauf , 'size' => 18 %>
   </p>
   <p class="left">
-    <%= f.label :anmerkungnachkauf %><br />
+    <label for="anmerkungnachkauf">Anmerkung nach Kauf</label><br />
     <%= f.text_field :anmerkungnachkauf , 'size' => 19 %>
   </p>  
   <p class="left margin">
@@ -142,28 +142,28 @@
   </p>
   <p class="left margin">
     <%= f.label :kaufpreis %><br />
-    <%= f.text_field :kaufpreis , 'size' => 6 %>
+    <%= f.text_field :kaufpreis , 'size' => 6 , :value => number_with_precision(@auto.kaufpreis, :precision => 2) %>
   </p>
   <p class="left margin">
     <%= f.label :transport %><br />
-    <%= f.text_field :transport , 'size' => 6 %>
+    <%= f.text_field :transport , 'size' => 6 , :value => number_with_precision(@auto.transport, :precision => 2) %>
   </p>
   <p class="left margin">
     <%= f.label :summe %><br />
-    <%= f.text_field :summe , 'size' => 7 %>
+    <%= f.text_field :summe , 'size' => 7 , :value => number_with_precision(@auto.summe, :precision => 2) %>
   </p>
   <p class="left platz">&nbsp;</p>
   <p class="left margin">
     <%= f.label :ersatzteile %><br />
-    <%= f.text_field :ersatzteile , 'size' => 6 %>
+    <%= f.text_field :ersatzteile , 'size' => 6 , :value => number_with_precision(@auto.ersatzteile, :precision => 2) %>
   </p>
   <p class="left margin">
     <%= f.label :restaurier %><br />
-    <%= f.text_field :restaurier , 'size' => 6 %>
+    <%= f.text_field :restaurier , 'size' => 6 , :value => number_with_precision(@auto.restaurier, :precision => 2) %>
   </p>
   <p class="left margin">
     <%= f.label :gesamt %><br />
-    <%= f.text_field :gesamt , 'size' => 7 %>
+    <%= f.text_field :gesamt , 'size' => 7 , :value => number_with_precision(@auto.gesamt, :precision => 2) %>
   </p>
  <p class="left margin">
     <label for="fw">fremdw.</label><br />
@@ -171,28 +171,28 @@
   </p>
  <p class="left margin">
     <label for="fwkaufpreis">kaufpreis</label><br />
-    <%= f.text_field :fwkaufpreis , 'size' => 6 %>
+    <%= f.text_field :fwkaufpreis , 'size' => 6 , :value => number_with_precision(@auto.fwkaufpreis, :precision => 2) %>
   </p>
 <p class="left margin">
     <label for="fwtransport">transport</label><br />
-    <%= f.text_field :fwtransport , 'size' => 6 %>
+    <%= f.text_field :fwtransport , 'size' => 6 , :value => number_with_precision(@auto.fwtransport, :precision => 2) %>
   </p>
 <p class="left margin">
     <label for="fwsumme">summe</label><br />
-    <%= f.text_field :fwsumme , 'size' => 7 %>
+    <%= f.text_field :fwsumme , 'size' => 7 , :value => number_with_precision(@auto.fwsumme, :precision => 2) %>
   </p>
 <p class="left platz">&nbsp;</p>
 <p class="left margin">
     <label for="fwsersatzteile">ersatzteile</label><br />
-    <%= f.text_field :fwersatzteile , 'size' => 6 %>
+    <%= f.text_field :fwersatzteile , 'size' => 6 , :value => number_with_precision(@auto.fwersatzteile, :precision => 2)  %>
   </p>
 <p class="left margin">
     <label for="fwrestaurier">restaurier</label><br />
-    <%= f.text_field :fwrestaurier , 'size' => 6 %>
+    <%= f.text_field :fwrestaurier , 'size' => 6, :value => number_with_precision(@auto.fwrestaurier, :precision => 2) %>
   </p>
 <p class="left margin">
     <label for="fwgesamt">gesamt</label><br />
-    <%= f.text_field :fwgesamt , 'size' => 7 %>
+    <%= f.text_field :fwgesamt , 'size' => 7, :value => number_with_precision(@auto.fwgesamt, :precision => 2) %>
   </p>
 	
 </div>
