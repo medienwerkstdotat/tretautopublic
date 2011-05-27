@@ -1,6 +1,6 @@
 <%= form_for @auto, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
-	<div class="narrow" style="width: 335px; float: left; margin-left: -9px;">
+	<div class="narrow blaa" style="width: 335px; float: left; margin-left: -9px;">
 		<p class="left">
 		<%= f.label :id %><br />
 		<%= f.text_field :id,  'size' => 2 %>
@@ -196,5 +196,5 @@
   </p>
 	
 </div>
-  <p style="clear: both;"><%= f.submit %></p>
+  <p style="clear: both; border-top: 1px solid #AE0D1B; margin-right: 10px;"><%= f.submit %></p>
 <% end %>
