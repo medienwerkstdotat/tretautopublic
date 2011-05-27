@@ -86,8 +86,8 @@
 		<% f.fields_for :assets do |asset_fields| %>
 			<% unless asset_fields.object.new_record? %>
 				<p>
-					<%= link_to image_tag(asset_fields.object.asset.url(:thumb)), asset_fields.object.asset.url(:original) %>
-					<%= asset_fields.text_field :id , 'size' => 2 %>
+					<%= link_to image_tag(asset_fields.object.asset.url(:thumb)), asset_fields.object.asset.url(:original) %><br>
+					<%= asset_fields.check_box :thumbnail  %> thumbnail<br>
 					<%= asset_fields.check_box :_destroy %> löschen
 				</p>
 			<% end %>

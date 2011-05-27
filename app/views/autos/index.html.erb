@@ -51,12 +51,16 @@
   <% for auto in @autos %>
     <tr onclick="">
 		<td><span style="margin-left: 10px">
+		<% auto.assets.each_with_index  do |asset, i|
+			
+			 %>
 		
-		<% auto.assets.each_with_index do |asset, i| 
-			break if i == 1;
-		%>
-		
-			<%= image_tag(asset.asset.url(:thumb)) %>
+				
+			<!-- <%= asset.thumbnail %> -->
+			<% if asset.thumbnail == true %>
+			<%= image_tag(asset.asset.url(:thumb)) %>          
+			<% end %>
+			
 			
 		<% end %>
 		</span>
