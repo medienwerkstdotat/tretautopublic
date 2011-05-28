@@ -281,7 +281,7 @@ table tr:last-child {
 	display: block; 
 	min-height: 40px; 
 	border: 1px solid #ccc; 
-	width: 130px; 
+	width: 145px; 
 	margin-bottom: 5px;
 	padding: 5px;
 }
@@ -291,7 +291,7 @@ table tr:last-child {
 	display: block; 
 	min-height: 13px; 
 	border: 1px solid #ccc; 
-	width: 130px; 
+	width: 145px; 
 	margin-bottom: 5px;
 	padding: 5px;
 }
@@ -305,7 +305,7 @@ table tr:last-child {
 	display: block; 
 	min-height: 13px; 
 	border: 1px solid #ccc; 
-	width: 280px; 
+	width: 312px; 
 	margin-bottom: 5px;
 	padding: 5px;
 }
@@ -318,7 +318,7 @@ table tr:last-child {
 	display: block; 
 	min-height: 13px; 
 	border: 1px solid #ccc; 
-	width: 30px; 
+	width: 38px; 
 	margin-bottom: 5px;
 	padding: 5px;
 }
@@ -327,7 +327,7 @@ table tr:last-child {
 	display: block; 
 	min-height: 13px; 
 	border: 1px solid #ccc; 
-	width: 220px; 
+	width: 250px; 
 	margin-bottom: 5px;
 	padding: 5px;
 }
@@ -336,10 +336,10 @@ table tr:last-child {
 	display: block; 
 	min-height: 13px; 
 	border: 1px solid #ccc; 
-	width: 32px; 
+	width: 33px; 
 	margin-bottom: 5px;
 	padding: 5px;
-	margin-right: 5px;
+	margin-right: 11px;
 }
 
 .textfieldsmal:last-child {
@@ -350,7 +350,7 @@ table tr:last-child {
 	display: block; 
 	min-height: 145px; 
 	border: 1px solid #ccc; 
-	width: 280px; 
+	width: 312px; 
 	margin-bottom: 5px;
 	padding: 5px;
 	margin-right: 5px;
