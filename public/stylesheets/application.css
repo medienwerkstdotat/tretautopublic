@@ -378,3 +378,7 @@ table tr:last-child {
 .dark {
 	border: 1px solid #a8a3a1;
 }
+
+.alignright {
+	text-align: right;
+}
