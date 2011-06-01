@@ -39,8 +39,8 @@ module Tretauto
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
     # Paperclip.options[:command_path] = "/opt/local/bin"
-    #Paperclip.options[:command_path] = "/usr/bin/convert"
-    Paperclip.options[:command_path] = "/usr/bin"
+    Paperclip.options[:command_path] = "/usr/bin/convert"
+    # Paperclip.options[:command_path] = "/usr/bin"
     
   end
 end
