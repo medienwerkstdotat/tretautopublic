@@ -79,7 +79,7 @@
 <p>
 	<% @auto.assets.each_with_index do |asset| %>
 
-		<p><%= link_to image_tag(asset.asset.url(:thumb)), asset.asset.url(:original) %></p>
+		<p><%= link_to image_tag(asset.asset.url(:small)), asset.asset.url(:original) %></p>
 	
 	<% end %>
 </p>
