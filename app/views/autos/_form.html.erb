@@ -1,75 +1,75 @@
 <%= form_for @auto, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
 	<div class="narrow blaa" style="width: 335px; float: left; margin-left: -9px;">
-		<p class="left">
+		<p class="left textfieldid_">
 		<%= f.label :id %><br />
 		<%= f.text_field :id,  'size' => 2 %>
 		</p>
-		<p class="left hersteller">
+		<p class="left hersteller textfieldherst_">
 	    <%= f.label :hersteller  %><br />
 	    <%= f.text_field :hersteller %>
 	  </p>
-	  <p class="modell">
+	  <p class="modell textfieldherst_">
 	    <%= f.label :modell %><br />
 	    <%= f.text_field :modell %>
 	  </p>
-	 <p class="firstcolumn left">
+	 <p class="firstcolumn left textfield__">
 	    <%= f.label :land %><br />
 	    <%= f.text_field :land %>
 	  </p>
-	  <p class="secondcolumn left">
+	  <p class="secondcolumn left textfield__">
 	    <%= f.label :baujahr %><br />
 	    <%= f.text_field :baujahr %>
 	  </p>
 		<br style="clear: both;">
-	  <p class="typ">
+	  <p class="typ textfieldbig__">
 	    <%= f.label :typ %><br />
 	    <%= f.text_field :typ %>
 	  </p>
-	 <p class="firstcolumn left">
+	 <p class="firstcolumn left textfield__">
 	    <%= f.label :status %><br />
 	    <%= f.text_field :status %>
 	  </p>
-	  <p class="secondcolumn left">
+	  <p class="secondcolumn left textfield__">
 	    <%= f.label :farbe %><br />
 	    <%= f.text_field :farbe %>
 	  </p>
-	  <p class="firstcolumn left">
+	  <p class="firstcolumn left textarea_">
 	    <%= f.label :konstruktion %><br />
 	    <%= f.text_area :konstruktion %>
 	  </p>
-	 <p class="secondcolumn left">
+	 <p class="secondcolumn left textarea_">
 	    <%= f.label :antrieb %><br />
 	    <%= f.text_area :antrieb %>
 	  </p>
-	  <p class="firstcolumn left">
+	  <p class="firstcolumn left textarea_">
 	    <%= f.label :raeder %><br />
 	    <%= f.text_area :raeder %>
 	  </p>
-	  <p class="secondcolumn left">
+	  <p class="secondcolumn left textarea_">
 	    <%= f.label :ausstattung %><br />
 	    <%= f.text_area :ausstattung %>
 	  </p>
-	<p class="firstofthreecolumns left">
+	<p class="firstofthreecolumns left textfieldsmal_">
 	    <%= f.label :description, "ABMeSSuNgeN LxBxH" %><br />
 	    <%= f.text_field :abmessungl, 'size' => 2 , :value => number_with_precision(@auto.abmessungl, :precision => 1) %>
 	    <%= f.text_field :abmessungb, 'size' => 2 , :value => number_with_precision(@auto.abmessungb, :precision => 1) %>
 	    <%= f.text_field :abmessungh, 'size' => 2 , :value => number_with_precision(@auto.abmessungh, :precision => 1) %>
 	  </p>
-	  <p class="secondcolumn left">
+	  <p class="secondcolumn left textfield__" style="margin-left:0">
 	    <label for="gewichtinkg">Gewicht in kg</label><br />
 	    <%= f.text_field :gewichtinkg %>
 	  </p>
-	  <p class="firstcolumn left">
+	  <p class="firstcolumn left textfield__">
 	    <%= f.label :relevanz %><br />
 	    <%= f.text_field :relevanz %>
 	  </p>
-	  <p class="secondcolumn left">
+	  <p class="secondcolumn left textfield__">
 	    <label for="geschaetztermarktwert">Marktwert geschätzt</label><br />
 	    <%= f.text_field :geschaetztermarktwert , :value => number_with_precision(@auto.geschaetztermarktwert, :precision => 2) %>
 	  </p>
 	<br style="clear:both;">
-	  <p class="sonstiges">
+	  <p class="sonstiges textfieldsonstiges_">
 	    <%= f.label :sonstiges %><br />
 	    <%= f.text_area :sonstiges %>
 	  </p>
@@ -78,7 +78,7 @@
 		<%= f.fields_for :assets do |asset_fields| %>
 			<% if asset_fields.object.new_record? %>
 				<p>
-					<%= asset_fields.file_field :asset %>
+					<%= asset_fields.file_field :asset, :class => 'file-field' %>
 				</p>
 			<% end %>
 		<% end %>
@@ -86,7 +86,7 @@
 		<% f.fields_for :assets do |asset_fields| %>
 			<% unless asset_fields.object.new_record? %>
 				<p>
-					<%= link_to image_tag(asset_fields.object.asset.url(:thumb)), asset_fields.object.asset.url(:original) %><br>
+					<%= link_to image_tag(asset_fields.object.asset.url(:small)), asset_fields.object.asset.url(:original) %><br>
 					<%= asset_fields.check_box :thumbnail  %> thumbnail<br>
 					<%= asset_fields.check_box :_destroy %> löschen
 				</p>
@@ -95,102 +95,102 @@
 	</div>
 	<div class="narrow" style="width: 335px; float: left; background: #ccc;">
  
-  <p class="left margin">
+  <p class="left margin textfieldid_">
     <label for="datenbanknralt">DB. Alt</label><br />
     <%= f.text_field :datenbanknralt, 'size' => 3 %>
   </p>
-  <p class="left margin">
+  <p class="left margin textfieldundef__">
     <%= f.label :kaufdatum %><br />
     <%= f.text_field :kaufdatum, 'size' => 10 %>
   </p>  
-  <p>
+  <p class="textfield__">
     <%= f.label :verkaeufer %><br />
     <%= f.text_field :verkaeufer , 'size' => 19 %>
   </p>  
-  <p class="left margin">
+  <p class="left margin textfield__">
     <label for="ebaybenutzername">Ebay Benutzername</label><br />
     <%= f.text_field :ebaybenutzername , 'size' => 18 %>
   </p>  
-  <p class="left">
+  <p class="left textfield__">
     <label for="ebayartikelnummer">Ebay Artikelnummer</label><br />
     <%= f.text_field :ebayartikelnummer , 'size' => 19 %>
   </p>
-  <p>
+  <p class="textfieldbig___">
     <%= f.label :modellbeschreibung %><br />
-    <%= f.text_field :modellbeschreibung , 'size' => 42 %>
+    <%= f.text_field :modellbeschreibung %>
   </p>
-  <p class="left margin">
+  <p class="left margin textfield__">
     <label for="farbekauf">Farbe kauf</label><br />
     <%= f.text_field :farbekauf , 'size' => 18 %>
   </p>
-  <p class="left">
+  <p class="left textfield__">
     <label for="anmerkungnachkauf">Anmerkung nach Kauf</label><br />
     <%= f.text_field :anmerkungnachkauf , 'size' => 19 %>
   </p>  
-  <p class="left margin">
+  <p class="left margin textfield__">
     <%= f.label :zahlungsart %><br />
     <%= f.text_field :zahlungsart , 'size' => 18 %>
   </p>
-  <p class="left">
+  <p class="left textfield__">
     <%= f.label :zahlungsdatum %><br />
     <%= f.text_field :zahlungsdatum , 'size' => 19 %>
   </p>  
 
-  <p class="left margin">
+  <p class="left textfieldmid_">
     <%= f.label :waehrung %><br />
     <%= f.text_field :waehrung , 'size' => 6 %>
   </p>
-  <p class="left margin">
+  <p class="left textfieldmid_">
     <%= f.label :kaufpreis %><br />
     <%= f.text_field :kaufpreis , 'size' => 6 , :value => number_with_precision(@auto.kaufpreis, :precision => 2) %>
   </p>
-  <p class="left margin">
+  <p class="left textfieldmid_">
     <%= f.label :transport %><br />
     <%= f.text_field :transport , 'size' => 6 , :value => number_with_precision(@auto.transport, :precision => 2) %>
   </p>
-  <p class="left margin">
+  <p class="left textfieldmid_">
     <%= f.label :summe %><br />
     <%= f.text_field :summe , 'size' => 7 , :value => number_with_precision(@auto.summe, :precision => 2) %>
   </p>
   <p class="left platz">&nbsp;</p>
-  <p class="left margin">
+  <p class="left textfieldmid_">
     <%= f.label :ersatzteile %><br />
     <%= f.text_field :ersatzteile , 'size' => 6 , :value => number_with_precision(@auto.ersatzteile, :precision => 2) %>
   </p>
-  <p class="left margin">
+  <p class="left textfieldmid_">
     <%= f.label :restaurier %><br />
     <%= f.text_field :restaurier , 'size' => 6 , :value => number_with_precision(@auto.restaurier, :precision => 2) %>
   </p>
-  <p class="left margin">
+  <p class="left textfieldmid_">
     <%= f.label :gesamt %><br />
     <%= f.text_field :gesamt , 'size' => 7 , :value => number_with_precision(@auto.gesamt, :precision => 2) %>
   </p>
- <p class="left margin">
+ <p class="left textfieldmid_">
     <label for="fw">fremdw.</label><br />
     <%= f.text_field :fw , 'size' => 6 %>
   </p>
- <p class="left margin">
+ <p class="left textfieldmid_">
     <label for="fwkaufpreis">kaufpreis</label><br />
     <%= f.text_field :fwkaufpreis , 'size' => 6 , :value => number_with_precision(@auto.fwkaufpreis, :precision => 2) %>
   </p>
-<p class="left margin">
+<p class="left textfieldmid_">
     <label for="fwtransport">transport</label><br />
     <%= f.text_field :fwtransport , 'size' => 6 , :value => number_with_precision(@auto.fwtransport, :precision => 2) %>
   </p>
-<p class="left margin">
+<p class="left textfieldmid_">
     <label for="fwsumme">summe</label><br />
     <%= f.text_field :fwsumme , 'size' => 7 , :value => number_with_precision(@auto.fwsumme, :precision => 2) %>
   </p>
 <p class="left platz">&nbsp;</p>
-<p class="left margin">
+<p class="left textfieldmid_">
     <label for="fwsersatzteile">ersatzteile</label><br />
     <%= f.text_field :fwersatzteile , 'size' => 6 , :value => number_with_precision(@auto.fwersatzteile, :precision => 2)  %>
   </p>
-<p class="left margin">
+<p class="left textfieldmid_">
     <label for="fwrestaurier">restaurier</label><br />
     <%= f.text_field :fwrestaurier , 'size' => 6, :value => number_with_precision(@auto.fwrestaurier, :precision => 2) %>
   </p>
-<p class="left margin">
+<p class="left textfieldmid_">
     <label for="fwgesamt">gesamt</label><br />
     <%= f.text_field :fwgesamt , 'size' => 7, :value => number_with_precision(@auto.fwgesamt, :precision => 2) %>
   </p>

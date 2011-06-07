@@ -11,7 +11,7 @@ class AutosController < ApplicationController
 
   def new
     @auto = Auto.new
-    5.times {@auto.assets.build}
+    2.times {@auto.assets.build}
   end
 
   def create
@@ -25,7 +25,7 @@ class AutosController < ApplicationController
 
   def edit
     @auto = Auto.find(params[:id])
-    5.times {@auto.assets.build}
+    2.times {@auto.assets.build}
   end
 
   def update
@@ -50,4 +50,7 @@ class AutosController < ApplicationController
       username == "fooo" && password == "bar"
     end
   end
+  
+  
+  
 end

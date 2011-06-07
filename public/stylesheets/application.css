@@ -10,8 +10,15 @@ a img {
 }
 
 a {
-  color: #0000FF;
+  color: #AE0D1B;
+  text-decoration: none;
 }
+
+a:hover {
+	text-decoration: underline;
+}
+
+
 
 .clear {
   clear: both;
@@ -126,7 +133,8 @@ table {
 }
 
 input[type="file"] {
-	margin-left: -50px;
+	position: relative;
+	width: 105px;
 }
 
 label {
@@ -147,7 +155,7 @@ label {
 }
 
 .modell {
-	margin-left: 48px;
+	margin-left: 61px;
 	clear: both;
 }
 
@@ -207,7 +215,7 @@ input {
 }
 
 .platz {
-	margin-right: 78px;
+	margin-right: 79px;
 }
 
 .dataTables_info, 
@@ -277,7 +285,8 @@ table tr:last-child {
 	background: #efefed;
 }
 
-.textarea {
+.textarea,
+.textarea_ textarea {
 	display: block; 
 	min-height: 40px; 
 	border: 1px solid #ccc; 
@@ -287,7 +296,8 @@ table tr:last-child {
 }
 
 .textfield,
-.textfield_ {
+.textfield_,
+.textfield__ input {
 	display: block; 
 	min-height: 13px; 
 	border: 1px solid #ccc; 
@@ -301,7 +311,9 @@ table tr:last-child {
 }
 
 .textfieldbig,
-.textfieldbig_ {
+.textfieldbig_,
+.textfieldbig__ input ,
+.textfieldbig___ input {
 	display: block; 
 	min-height: 13px; 
 	border: 1px solid #ccc; 
@@ -310,11 +322,15 @@ table tr:last-child {
 	padding: 5px;
 }
 
+.textfieldbig___ input {
+	width: 315px;
+}
+
 .textfieldbig_ {
 	width: 312px;
 }
 
-.textfieldid {
+.textfieldid, .textfieldid_ input {
 	display: block; 
 	min-height: 13px; 
 	border: 1px solid #ccc; 
@@ -323,7 +339,7 @@ table tr:last-child {
 	padding: 5px;
 }
 
-.textfieldherst {
+.textfieldherst, .textfieldherst_ input {
 	display: block; 
 	min-height: 13px; 
 	border: 1px solid #ccc; 
@@ -332,7 +348,8 @@ table tr:last-child {
 	padding: 5px;
 }
 
-.textfieldsmal {
+.textfieldsmal,
+.textfieldsmal_ input {
 	display: block; 
 	min-height: 13px; 
 	border: 1px solid #ccc; 
@@ -342,11 +359,16 @@ table tr:last-child {
 	margin-right: 11px;
 }
 
+.textfieldsmal_ input {
+	float: left;
+}
+
 .textfieldsmal:last-child {
 	margin-right: 0;
 }
 
-.textfieldsonstiges {
+.textfieldsonstiges,
+.textfieldsonstiges_ textarea {
 	display: block; 
 	min-height: 145px; 
 	border: 1px solid #ccc; 
@@ -356,7 +378,8 @@ table tr:last-child {
 	margin-right: 5px;
 }
 
-.textfieldmid {
+.textfieldmid,
+.textfieldmid_ input {
 	display: block; 
 	min-height: 13px; 
 	border: 1px solid #ccc; 
@@ -366,13 +389,18 @@ table tr:last-child {
 	margin-right: 10px;
 }
 
-.textfieldundef_ {
+.textfieldundef_, 
+.textfieldundef__ input {
 	display: block; 
 	min-height: 13px; 
 	border: 1px solid #ccc; 
 	width: 95px; 
 	margin-bottom: 5px;
 	padding: 5px;
+}
+
+.textfieldundef__ input {
+	width: 83px;
 }
 
 .dark {
