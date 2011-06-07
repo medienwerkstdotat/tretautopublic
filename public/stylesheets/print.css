@@ -1,23 +1,31 @@
-@media print{@page {size: landscape}}
-
-.page
+body
 {
  -webkit-transform: rotate(-90deg); -moz-transform:rotate(-90deg);
  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
 
-body, #container {
-  width: 105% !important;
+/*body, #container {
+  width: 115% !important;
+}*/
+
+body {
+	
+}
+
+#container {
+	width: 180%;
+	margin-left: -340px;
 }
 
 
 input[type="file"] {
-	display: none;
+	position: relative;
+	width: 105px;
 }
 
 label {
-	font-size: 10px;
+	font-size: 9px;
 	text-transform: uppercase;
 }
 
@@ -34,12 +42,12 @@ label {
 }
 
 .modell {
-	margin-left: 48px;
+	margin-left: 61px;
 	clear: both;
 }
 
 .modell_ {
-	margin-left: 32px;
+	margin-left: 62px;
 	clear: both;
 }
 
@@ -52,7 +60,11 @@ input {
 }
 
 .firstc, .secondc {
-	width: 130px;
+ 	margin-right: 10px;
+}
+
+.firstc {
+/*	margin-right: 5px;*/
 }
 
 .secondcolumn {
@@ -90,12 +102,13 @@ input {
 }
 
 .platz {
-	margin-right: 78px;
+	margin-right: 79px;
 }
 
 .dataTables_info, 
 .dataTables_paginate {
 	float: left;
+	margin-top: 20px;
 }
 
 .dataTables_info {
@@ -106,14 +119,17 @@ input {
 p.button {
 	margin: 0;
 	padding: 0;
+	margin-bottom: 80px;
+	margin-top: -20px;
 }
 
 .button a, #auto_submit {
 	margin-right: 20px;
 	margin-bottom: 40px;
+	margin-top: 20px;
 	background: #ae0d1b;
 	background: #CCCCCC;
-	padding: 3px 10px;
+	padding: 3px 10px 2px 10px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
@@ -121,17 +137,20 @@ p.button {
 	color: #000;
 	text-decoration: none;
 	font-size: 14px !important;
+	cursor:pointer;
 }
 
 .button a {
 	padding-bottom: 4px !important;
 	padding-top: 4px !important;
+	margin-top: 16px;
 }
 
 .narrow p {
 	margin-top:0;
 	margin-bottom:0;
 	font-size: 12px;
+	
 }
 
 .narrow {
@@ -139,6 +158,143 @@ p.button {
 	margin-top: 10px;
 }
 
-.file-style, .button, img, #auto_submit {
-	display: none;
+.file-style {
+	width: 230px; 
+	float: left; 
+	padding:25px 10px;
+}
+
+table tr:last-child {
+	border-bottom: 1px solid #AE0D1B;
+}
+
+.blaa input,
+.blaa textarea {
+	background: #efefed;
+}
+
+.textarea,
+.textarea_ textarea {
+	display: block; 
+	min-height: 40px; 
+	border: 1px solid #ccc; 
+	width: 145px; 
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
+.textfield,
+.textfield_,
+.textfield__ input {
+	display: block; 
+	min-height: 13px; 
+	border: 1px solid #ccc; 
+	width: 145px; 
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
+.textfield_ {
+	width: 145px; 
+}
+
+.textfieldbig,
+.textfieldbig_,
+.textfieldbig__ input ,
+.textfieldbig___ input {
+	display: block; 
+	min-height: 13px; 
+	border: 1px solid #ccc; 
+	width: 312px; 
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
+.textfieldbig___ input {
+	width: 315px;
+}
+
+.textfieldbig_ {
+	width: 312px;
+}
+
+.textfieldid, .textfieldid_ input {
+	display: block; 
+	min-height: 13px; 
+	border: 1px solid #ccc; 
+	width: 38px; 
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
+.textfieldherst, .textfieldherst_ input {
+	display: block; 
+	min-height: 13px; 
+	border: 1px solid #ccc; 
+	width: 250px; 
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
+.textfieldsmal,
+.textfieldsmal_ input {
+	display: block; 
+	min-height: 13px; 
+	border: 1px solid #ccc; 
+	width: 33px; 
+	margin-bottom: 5px;
+	padding: 5px;
+	margin-right: 11px;
+}
+
+.textfieldsmal_ input {
+	float: left;
+}
+
+.textfieldsmal:last-child {
+	margin-right: 0;
+}
+
+.textfieldsonstiges,
+.textfieldsonstiges_ textarea {
+	display: block; 
+	min-height: 145px; 
+	border: 1px solid #ccc; 
+	width: 312px; 
+	margin-bottom: 5px;
+	padding: 5px;
+	margin-right: 5px;
+}
+
+.textfieldmid,
+.textfieldmid_ input {
+	display: block; 
+	min-height: 13px; 
+	border: 1px solid #ccc; 
+	width: 61px; 
+	margin-bottom: 5px;
+	padding: 5px;
+	margin-right: 10px;
+}
+
+.textfieldundef_, 
+.textfieldundef__ input {
+	display: block; 
+	min-height: 13px; 
+	border: 1px solid #ccc; 
+	width: 95px; 
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
+.textfieldundef__ input {
+	width: 83px;
+}
+
+.dark {
+	border: 1px solid #a8a3a1;
+}
+
+.alignright {
+	text-align: right;
 }
