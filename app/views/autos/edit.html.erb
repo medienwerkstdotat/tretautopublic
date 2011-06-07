@@ -1,7 +1,19 @@
 <img src="/images/tretauto-logo.jpg" alt="Tretauto Logo">
 
 <%= render 'form' %>
-<p class="button">
+
+<p class="left">
+	Blättern: 
+	<%= link_to("voriger", @auto.previous ) if @auto.previous %>
+	<%=	"voriger" if !@auto.previous %> | 
+	<%= link_to("nächster", @auto.next) if @auto.next %>
+	<%=	"nächster" if !@auto.next %>
+	Datensatz
+</p>
+
+
+<div class="button">
   <%= link_to "Auto anzeigen", @auto %>
   <%= link_to "Alle Autos anzeigen", autos_path %>
-</p>
+</div>
+

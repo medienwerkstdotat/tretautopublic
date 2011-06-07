@@ -256,6 +256,7 @@ p.button {
 .button a {
 	padding-bottom: 4px !important;
 	padding-top: 4px !important;
+	margin-top: 16px;
 }
 
 .narrow p {
