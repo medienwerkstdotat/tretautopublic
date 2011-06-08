@@ -140,28 +140,28 @@
     <%= f.label :waehrung %><br />
     <%= f.text_field :waehrung , 'size' => 6 %>
   </p>
-  <p class="left textfieldmid_">
+  <p class="left textfieldmid_ alignright_">
     <%= f.label :kaufpreis %><br />
     <%= f.text_field :kaufpreis , 'size' => 6 , :value => number_with_precision(@auto.kaufpreis, :precision => 2) %>
   </p>
-  <p class="left textfieldmid_">
+  <p class="left textfieldmid_ alignright_">
     <%= f.label :transport %><br />
     <%= f.text_field :transport , 'size' => 6 , :value => number_with_precision(@auto.transport, :precision => 2) %>
   </p>
-  <p class="left textfieldmid_">
+  <p class="left textfieldmid_ alignright_">
     <%= f.label :summe %><br />
     <%= f.text_field :summe , 'size' => 7 , :value => number_with_precision(@auto.summe, :precision => 2) %>
   </p>
   <p class="left platz">&nbsp;</p>
-  <p class="left textfieldmid_">
+  <p class="left textfieldmid_ alignright_">
     <%= f.label :ersatzteile %><br />
     <%= f.text_field :ersatzteile , 'size' => 6 , :value => number_with_precision(@auto.ersatzteile, :precision => 2) %>
   </p>
-  <p class="left textfieldmid_">
+  <p class="left textfieldmid_ alignright_">
     <%= f.label :restaurier %><br />
     <%= f.text_field :restaurier , 'size' => 6 , :value => number_with_precision(@auto.restaurier, :precision => 2) %>
   </p>
-  <p class="left textfieldmid_">
+  <p class="left textfieldmid_ alignright_">
     <%= f.label :gesamt %><br />
     <%= f.text_field :gesamt , 'size' => 7 , :value => number_with_precision(@auto.gesamt, :precision => 2) %>
   </p>
@@ -169,28 +169,28 @@
     <label for="fw">fremdw.</label><br />
     <%= f.text_field :fw , 'size' => 6 %>
   </p>
- <p class="left textfieldmid_">
+ <p class="left textfieldmid_ alignright_">
     <label for="fwkaufpreis">kaufpreis</label><br />
     <%= f.text_field :fwkaufpreis , 'size' => 6 , :value => number_with_precision(@auto.fwkaufpreis, :precision => 2) %>
   </p>
-<p class="left textfieldmid_">
+<p class="left textfieldmid_ alignright_">
     <label for="fwtransport">transport</label><br />
     <%= f.text_field :fwtransport , 'size' => 6 , :value => number_with_precision(@auto.fwtransport, :precision => 2) %>
   </p>
-<p class="left textfieldmid_">
+<p class="left textfieldmid_ alignright_">
     <label for="fwsumme">summe</label><br />
     <%= f.text_field :fwsumme , 'size' => 7 , :value => number_with_precision(@auto.fwsumme, :precision => 2) %>
   </p>
 <p class="left platz">&nbsp;</p>
-<p class="left textfieldmid_">
+<p class="left textfieldmid_ alignright_">
     <label for="fwsersatzteile">ersatzteile</label><br />
     <%= f.text_field :fwersatzteile , 'size' => 6 , :value => number_with_precision(@auto.fwersatzteile, :precision => 2)  %>
   </p>
-<p class="left textfieldmid_">
+<p class="left textfieldmid_ alignright_">
     <label for="fwrestaurier">restaurier</label><br />
     <%= f.text_field :fwrestaurier , 'size' => 6, :value => number_with_precision(@auto.fwrestaurier, :precision => 2) %>
   </p>
-<p class="left textfieldmid_">
+<p class="left textfieldmid_ alignright_">
     <label for="fwgesamt">gesamt</label><br />
     <%= f.text_field :fwgesamt , 'size' => 7, :value => number_with_precision(@auto.fwgesamt, :precision => 2) %>
   </p>

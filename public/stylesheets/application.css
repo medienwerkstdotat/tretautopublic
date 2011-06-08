@@ -408,6 +408,7 @@ table tr:last-child {
 	border: 1px solid #a8a3a1;
 }
 
-.alignright {
+.alignright,
+.alignright_ input {
 	text-align: right;
 }
