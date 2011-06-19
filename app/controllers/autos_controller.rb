@@ -47,7 +47,7 @@ class AutosController < ApplicationController
 
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
-      username == "fooo" && password == "bar"
+      username == "anemon" && password == "lotus"
     end
   end
   
