@@ -5,7 +5,7 @@ class CreateAssets < ActiveRecord::Migration
       t.string :asset_content_type
       t.integer :asset_file_size
       t.datetime :asset_updated_at
-      t.integer :post_id
+      t.integer :auto_id
 
       t.timestamps
     end

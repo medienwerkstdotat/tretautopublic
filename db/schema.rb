@@ -17,17 +17,16 @@ ActiveRecord::Schema.define(:version => 20110427204635) do
     t.string   "asset_content_type"
     t.integer  "asset_file_size"
     t.datetime "asset_updated_at"
-    t.integer  "auto_id"
+    t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.binary   "thumbnail",          :limit => 1
   end
 
   create_table "autos", :force => true do |t|
     t.string   "hersteller"
     t.string   "modell"
     t.string   "land"
-    t.integer  "baujahr"
+    t.string  "baujahr"
     t.string   "typ"
     t.integer  "datenbanknr"
     t.integer  "datenbanknralt"
