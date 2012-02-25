@@ -80,9 +80,9 @@ namespace :deploy do
   desc "Deploys and starts a `cold' application."
   task :cold do       # Overriding the default deploy:cold
     update
-    run "cd #{current_release} && rake db:create RAILS_ENV=#{rails_env}"
-    load_schema       # My own step, replacing migrations.
-    run "cd #{current_release} && rake db:seed RAILS_ENV=#{rails_env}" # load the seed data
+    #run "cd #{current_release} && rake db:create RAILS_ENV=#{rails_env}"
+    #load_schema       # My own step, replacing migrations.
+    #run "cd #{current_release} && rake db:seed RAILS_ENV=#{rails_env}" # load the seed data
     start
   end
 

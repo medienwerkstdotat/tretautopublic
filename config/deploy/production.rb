@@ -9,9 +9,10 @@ role :db,  "rakete.ror.at", :primary => true
 set :deploy_to, "/var/www/#{application}"
 
 # application setup
-set :ip, "80.120.121.229"
+set :ip, "80.120.121.246"
 set :db_host, "mysql.antiloop.com"
 set :db_prefix, "rakete_ror_at"
+set :db_username, "helmutchlebecek"
 set :db_password, "oyRyquen"
 
 # ssl settings
