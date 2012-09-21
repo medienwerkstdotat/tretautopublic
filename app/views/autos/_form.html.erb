@@ -58,7 +58,7 @@
 	  </p>
 	  <p class="secondcolumn left textfield__" style="margin-left:0">
 	    <label for="gewichtinkg">Gewicht in kg</label><br />
-	    <%= f.text_field :gewichtinkg %>
+	    <%= f.text_field :gewichtinkg, :value => number_with_precision(@auto.gewichtinkg, :precision => 2) %>
 	  </p>
 	  <p class="firstcolumn left textfield__">
 	    <%= f.label :relevanz %><br />

@@ -14,10 +14,10 @@ class CreateAutos < ActiveRecord::Migration
       t.string :konstruktion
       t.integer :raeder
       t.string :ausstattung
-      t.integer :abmessungl
-      t.integer :abmessungb
-      t.integer :abmessungh
-      t.integer :gewichtinkg
+      t.float :abmessungl
+      t.float :abmessungb
+      t.float :abmessungh
+      t.float :gewichtinkg
       t.string :relevanz
       t.integer :geschaetztermarktwert
       t.string :sonstiges
