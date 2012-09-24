@@ -109,7 +109,7 @@ DEPENDENCIES
   capistrano-ext (= 1.2.1)
   jquery-rails
   mocha
-  mysql2
+  mysql2 (= 0.3.11)
   nifty-generators
   paperclip
   rails (= 3.0.3)
