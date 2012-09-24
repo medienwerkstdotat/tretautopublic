@@ -5,9 +5,9 @@ gem 'nifty-generators'
 gem 'paperclip'
 
 group :development do
-  gem 'capistrano'
-  gem 'capistrano-ext'
-  gem 'rvm'
+  gem 'capistrano', "2.5.21"
+  gem 'capistrano-ext', "1.2.1"
+  gem 'rvm', "1.11.3.5"
 end
 
 # Bundle edge Rails instead:
