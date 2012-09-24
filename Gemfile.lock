@@ -56,7 +56,7 @@ GEM
     mime-types (1.19)
     mocha (0.12.4)
       metaclass (~> 0.0.1)
-    mysql2 (0.3.11)
+    mysql2 (0.2.7)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -109,7 +109,7 @@ DEPENDENCIES
   capistrano-ext (= 1.2.1)
   jquery-rails
   mocha
-  mysql2 (= 0.3.11)
+  mysql2 (= 0.2.7)
   nifty-generators
   paperclip
   rails (= 3.0.3)
