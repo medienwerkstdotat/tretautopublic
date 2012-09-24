@@ -92,8 +92,7 @@ GEM
       rake (>= 0.8.7)
       thor (~> 0.14.4)
     rake (0.9.2.2)
-    rvm-capistrano (1.2.7)
-      capistrano (>= 2.0.0)
+    rvm (1.11.3.5)
     thor (0.14.6)
     treetop (1.4.10)
       polyglot
@@ -112,4 +111,4 @@ DEPENDENCIES
   nifty-generators
   paperclip
   rails (= 3.0.3)
-  rvm-capistrano
+  rvm
