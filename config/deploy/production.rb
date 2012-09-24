@@ -1,7 +1,7 @@
 set :rails_env, "production"
 set :branch, "master"
 set :application, "rakete.ror.at"
-set :server_names, [{ :name => "rakete.ror.at"}]
+set :server_names, [{ :name => "rakete.ror.at", :alias => %W(tret-auto.at www.tret-auto.at)}]
 
 role :app, "rakete.ror.at"
 role :web, "rakete.ror.at"
