@@ -5,6 +5,7 @@ gem 'nifty-generators'
 gem 'paperclip'
 gem 'capistrano'
 gem 'capistrano-ext'
+gem 'rvm-capistrano'
 
 
 # Bundle edge Rails instead:
