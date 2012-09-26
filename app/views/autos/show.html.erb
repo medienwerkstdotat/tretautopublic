@@ -57,7 +57,7 @@
 </p>
 <p class="secondc left">
   <label>Gewicht in kg</label><br />
-  <span class="textfield"><%= @auto.gewichtinkg %>&nbsp;</span>
+  <span class="textfield"><%= number_with_precision(@auto.gewichtinkg, :precision => 2) %>&nbsp;</span>
 </p>
 <br style="clear:both">
 <p class="firstc left">
